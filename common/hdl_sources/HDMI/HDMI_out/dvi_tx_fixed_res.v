@@ -67,11 +67,11 @@ module dvi_tx_fixed_res (
     input  wire       reset;
     // Pixel coordinates
     output wire [H_POSIT_BITS-1:0] HPos;
-	output wire [V_POSIT_BITS-1:0] VPos;
+    output wire [V_POSIT_BITS-1:0] VPos;
     // Video data
     input  wire [7:0] red_data;
-	input  wire [7:0] green_data;
-	input  wire [7:0] blue_data;
+    input  wire [7:0] green_data;
+    input  wire [7:0] blue_data;
     //
     output wire       active;
     output wire       preload_vid_line;

@@ -26,7 +26,7 @@ run
 -dsp_utilization_ratio 100
 -lc Auto
 -reduce_control_sets Auto
--vlgincdir { "C:/Users/Alexis/Documents/common/include" "C:/Users/Alexis/Documents/Tareas/Project_motion_segmentation/common/include" }
+-vlgincdir { "C:/Users/Alexis/Documents/Tareas/Project_motion_segmentation/common/include" }
 -generics { SYNT_RT_BE=1 }
 -fsm_extract YES -fsm_encoding Auto
 -safe_implementation No

@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-ALEX-PC::  Wed Feb 22 14:22:06 2017
+ALEX-PC::  Wed Feb 22 19:58:27 2017
 
 par -w -intstyle ise -ol high -xe n -mt 4 top_map.ncd top.ncd top.pcf 
 
@@ -26,7 +26,7 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      1,656 out of  27,288    6%
+  Number of Slice LUTs:                      1,655 out of  27,288    6%
     Number used as logic:                    1,566 out of  27,288    5%
       Number using O6 output only:           1,087
       Number using O5 output only:             100
@@ -42,18 +42,18 @@ Slice Logic Utilization:
         Number using O6 output only:             4
         Number using O5 output only:             0
         Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:     22
-      Number with same-slice register load:     12
+    Number used exclusively as route-thrus:     21
+      Number with same-slice register load:     11
       Number with same-slice carry load:        10
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   655 out of   6,822    9%
+  Number of occupied Slices:                   648 out of   6,822    9%
   Number of MUXCYs used:                       308 out of  13,644    2%
-  Number of LUT Flip Flop pairs used:        1,877
-    Number with an unused Flip Flop:           805 out of   1,877   42%
-    Number with an unused LUT:                 221 out of   1,877   11%
-    Number of fully used LUT-FF pairs:         851 out of   1,877   45%
+  Number of LUT Flip Flop pairs used:        1,878
+    Number with an unused Flip Flop:           804 out of   1,878   42%
+    Number with an unused LUT:                 223 out of   1,878   11%
+    Number of fully used LUT-FF pairs:         851 out of   1,878   45%
     Number of slice register sites lost
       to control set restrictions:               0 out of  54,576    0%
 
@@ -111,33 +111,29 @@ PAR will use up to 4 processors
 Starting Multi-threaded Router
 
 
-Phase  1  : 11467 unrouted;      REAL time: 9 secs 
+Phase  1  : 11458 unrouted;      REAL time: 9 secs 
 
-Phase  2  : 9394 unrouted;      REAL time: 12 secs 
+Phase  2  : 9388 unrouted;      REAL time: 12 secs 
 
-Phase  3  : 4033 unrouted;      REAL time: 20 secs 
+Phase  3  : 4216 unrouted;      REAL time: 21 secs 
 
-Phase  4  : 4033 unrouted; (Setup:0, Hold:132769, Component Switching Limit:0)     REAL time: 22 secs 
+Phase  4  : 4216 unrouted; (Setup:0, Hold:97674, Component Switching Limit:0)     REAL time: 23 secs 
 
 Updating file: top.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:129972, Component Switching Limit:0)     REAL time: 26 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:87711, Component Switching Limit:0)     REAL time: 31 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:129972, Component Switching Limit:0)     REAL time: 26 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:87711, Component Switching Limit:0)     REAL time: 31 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:129972, Component Switching Limit:0)     REAL time: 26 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:87711, Component Switching Limit:0)     REAL time: 31 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:129972, Component Switching Limit:0)     REAL time: 26 secs 
-WARNING:Route:522 - Unusually high hold time violation detected among 2 connections.The router will continue and try to fix it 
-	HDMI_out_1/video_timing_gen_1/h_active_comp_d:AQ -> user_app_1/mem_dispatcher__read_unit/_n0198_inv:A5 -2370
-	user_app_1/mem_dispatcher__read_unit/_n0198_inv:A -> user_app_1/mem_dispatcher__read_unit/buff_add<8>:CE -2024
+Phase  8  : 0 unrouted; (Setup:0, Hold:87711, Component Switching Limit:0)     REAL time: 31 secs 
 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 32 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 26 secs 
-
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 27 secs 
-Total REAL time to Router completion: 27 secs 
-Total CPU time to Router completion (all processors): 30 secs 
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 32 secs 
+Total REAL time to Router completion: 32 secs 
+Total CPU time to Router completion (all processors): 39 secs 
 
 Generating "PAR" statistics.
 
@@ -149,19 +145,19 @@ Generating Clock Report
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
 |user_app_1/clk_vid_i |              |      |      |            |             |
-|                   n |  BUFGMUX_X2Y3| No   |  107 |  0.057     |  1.271      |
+|                   n |  BUFGMUX_X2Y3| No   |  106 |  0.061     |  1.274      |
 +---------------------+--------------+------+------+------------+-------------+
 |user_app_1/DDR2_MCB_ |              |      |      |            |             |
 |1/u_ddr2/c3_mcb_drp_ |              |      |      |            |             |
-|                 clk | BUFGMUX_X3Y13| No   |  151 |  0.078     |  1.299      |
+|                 clk | BUFGMUX_X3Y13| No   |  152 |  0.079     |  1.299      |
 +---------------------+--------------+------+------+------------+-------------+
-|  user_app_1/c3_clk0 |  BUFGMUX_X2Y2| No   |   69 |  0.038     |  1.272      |
+|  user_app_1/c3_clk0 |  BUFGMUX_X2Y2| No   |   68 |  0.053     |  1.274      |
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_25MHz | BUFGMUX_X2Y10| No   |  104 |  0.060     |  1.272      |
+|           clk_25MHz | BUFGMUX_X2Y10| No   |  105 |  0.050     |  1.261      |
 +---------------------+--------------+------+------+------------+-------------+
 |user_app_1/video_rec |              |      |      |            |             |
 |eiver_1/dvi_decoder_ |              |      |      |            |             |
-|            1/pclkx2 |  BUFGMUX_X2Y4| No   |   74 |  0.171     |  1.396      |
+|            1/pclkx2 |  BUFGMUX_X2Y4| No   |   72 |  0.171     |  1.396      |
 +---------------------+--------------+------+------+------------+-------------+
 |           clk_50MHz | BUFGMUX_X2Y12| No   |   26 |  0.240     |  1.456      |
 +---------------------+--------------+------+------+------------+-------------+
@@ -249,15 +245,15 @@ Asterisk (*) preceding a constraint indicates it was not met.
   TS_pll_clk_100MHz = PERIOD TIMEGRP "pll_c | MINLOWPULSE |     6.666ns|     3.334ns|       0|           0
   lk_100MHz" TS_clk100_i HIGH 50%           |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  TS_user_app_1_DDR2_MCB_1_u_ddr2_memc3_inf | SETUP       |     1.354ns|     8.646ns|       0|           0
-  rastructure_inst_clk0_bufg_in =         P | HOLD        |     0.431ns|            |       0|           0
+  TS_user_app_1_DDR2_MCB_1_u_ddr2_memc3_inf | SETUP       |     1.408ns|     8.592ns|       0|           0
+  rastructure_inst_clk0_bufg_in =         P | HOLD        |     0.415ns|            |       0|           0
   ERIOD TIMEGRP         "user_app_1_DDR2_MC |             |            |            |        |            
   B_1_u_ddr2_memc3_infrastructure_inst_clk0 |             |            |            |        |            
   _bufg_in"         TS_pll_clk_100MHz HIGH  |             |            |            |        |            
   50%                                       |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  TS_user_app_1_DDR2_MCB_1_u_ddr2_memc3_inf | SETUP       |     1.493ns|     8.507ns|       0|           0
-  rastructure_inst_mcb_drp_clk_bufg_in      | HOLD        |     0.412ns|            |       0|           0
+  TS_user_app_1_DDR2_MCB_1_u_ddr2_memc3_inf | SETUP       |     1.805ns|     8.195ns|       0|           0
+  rastructure_inst_mcb_drp_clk_bufg_in      | HOLD        |     0.413ns|            |       0|           0
       = PERIOD TIMEGRP         "user_app_1_ |             |            |            |        |            
   DDR2_MCB_1_u_ddr2_memc3_infrastructure_in |             |            |            |        |            
   st_mcb_drp_clk_bufg_in"         TS_pll_cl |             |            |            |        |            
@@ -269,21 +265,21 @@ Asterisk (*) preceding a constraint indicates it was not met.
   TS_DVI_CLOCK0 = PERIOD TIMEGRP "DVI_CLOCK | MINLOWPULSE |    30.000ns|    10.000ns|       0|           0
   0" 25 MHz HIGH 50%                        |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  TS_pll_clk_50MHz = PERIOD TIMEGRP "pll_cl | SETUP       |    11.866ns|     8.134ns|       0|           0
-  k_50MHz" TS_clk100_i * 0.5 HIGH 50%       | HOLD        |     0.252ns|            |       0|           0
+  TS_pll_clk_50MHz = PERIOD TIMEGRP "pll_cl | SETUP       |    10.551ns|     9.449ns|       0|           0
+  k_50MHz" TS_clk100_i * 0.5 HIGH 50%       | HOLD        |     0.061ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  TS_user_app_1_video_receiver_1_dvi_decode | SETUP       |    14.931ns|     5.069ns|       0|           0
-  r_1_pllclk2 = PERIOD TIMEGRP         "use | HOLD        |     0.265ns|            |       0|           0
+  TS_user_app_1_video_receiver_1_dvi_decode | SETUP       |    14.824ns|     5.176ns|       0|           0
+  r_1_pllclk2 = PERIOD TIMEGRP         "use | HOLD        |     0.253ns|            |       0|           0
   r_app_1_video_receiver_1_dvi_decoder_1_pl |             |            |            |        |            
   lclk2" TS_DVI_CLOCK0 * 2         HIGH 50% |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  TS_user_app_1_video_receiver_1_dvi_decode | SETUP       |    16.928ns|     6.144ns|       0|           0
-  r_1_pllclk1 = PERIOD TIMEGRP         "use | HOLD        |     0.069ns|            |       0|           0
+  TS_user_app_1_video_receiver_1_dvi_decode | SETUP       |    17.028ns|     5.944ns|       0|           0
+  r_1_pllclk1 = PERIOD TIMEGRP         "use | HOLD        |     0.221ns|            |       0|           0
   r_app_1_video_receiver_1_dvi_decoder_1_pl |             |            |            |        |            
   lclk1" TS_DVI_CLOCK0 HIGH         50%     |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  TS_pll_clk_25MHz = PERIOD TIMEGRP "pll_cl | SETUP       |    33.022ns|     6.978ns|       0|           0
-  k_25MHz" TS_clk100_i * 0.25 HIGH 50%      | HOLD        |     0.404ns|            |       0|           0
+  TS_pll_clk_25MHz = PERIOD TIMEGRP "pll_cl | SETUP       |    31.491ns|     8.509ns|       0|           0
+  k_25MHz" TS_clk100_i * 0.25 HIGH 50%      | HOLD        |     0.331ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
   TS_pll_clk_250MHz = PERIOD TIMEGRP "pll_c | N/A         |         N/A|         N/A|     N/A|         N/A
   lk_250MHz" TS_clk100_i * 2.5 HIGH         |             |            |            |        |            
@@ -309,7 +305,7 @@ Derived Constraints for TS_clk100_i
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 |TS_clk100_i                    |     10.000ns|      3.334ns|      8.994ns|            0|            0|            0|        49446|
 | TS_pll_clk_100MHz             |     10.000ns|      3.334ns|      8.994ns|            0|            0|            0|        36927|
-|  TS_user_app_1_DDR2_MCB_1_u_dd|     10.000ns|      8.507ns|          N/A|            0|            0|        25576|            0|
+|  TS_user_app_1_DDR2_MCB_1_u_dd|     10.000ns|      8.195ns|          N/A|            0|            0|        25576|            0|
 |  r2_memc3_infrastructure_inst_|             |             |             |             |             |             |             |
 |  mcb_drp_clk_bufg_in          |             |             |             |             |             |             |             |
 |  TS_user_app_1_DDR2_MCB_1_u_dd|      1.667ns|      1.499ns|          N/A|            0|            0|            0|            0|
@@ -318,12 +314,12 @@ Derived Constraints for TS_clk100_i
 |  TS_user_app_1_DDR2_MCB_1_u_dd|      1.667ns|      1.499ns|          N/A|            0|            0|            0|            0|
 |  r2_memc3_infrastructure_inst_|             |             |             |             |             |             |             |
 |  clk_2x_0                     |             |             |             |             |             |             |             |
-|  TS_user_app_1_DDR2_MCB_1_u_dd|     10.000ns|      8.646ns|          N/A|            0|            0|        11351|            0|
+|  TS_user_app_1_DDR2_MCB_1_u_dd|     10.000ns|      8.592ns|          N/A|            0|            0|        11351|            0|
 |  r2_memc3_infrastructure_inst_|             |             |             |             |             |             |             |
 |  clk0_bufg_in                 |             |             |             |             |             |             |             |
-| TS_pll_clk_50MHz              |     20.000ns|      8.134ns|          N/A|            0|            0|          280|            0|
+| TS_pll_clk_50MHz              |     20.000ns|      9.449ns|          N/A|            0|            0|          280|            0|
 | TS_pll_clk_250MHz             |      4.000ns|          N/A|          N/A|            0|            0|            0|            0|
-| TS_pll_clk_25MHz              |     40.000ns|      6.978ns|          N/A|            0|            0|        12239|            0|
+| TS_pll_clk_25MHz              |     40.000ns|      8.509ns|          N/A|            0|            0|        12239|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 Derived Constraints for TS_DVI_CLOCK0
@@ -332,12 +328,12 @@ Derived Constraints for TS_DVI_CLOCK0
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_DVI_CLOCK0                  |     40.000ns|     10.000ns|     10.138ns|            0|            0|            0|         4247|
-| TS_user_app_1_video_receiver_1|     40.000ns|      6.144ns|          N/A|            0|            0|         2899|            0|
+|TS_DVI_CLOCK0                  |     40.000ns|     10.000ns|     10.352ns|            0|            0|            0|         4247|
+| TS_user_app_1_video_receiver_1|     40.000ns|      5.944ns|          N/A|            0|            0|         2899|            0|
 | _dvi_decoder_1_pllclk1        |             |             |             |             |             |             |             |
 | TS_user_app_1_video_receiver_1|      4.000ns|          N/A|          N/A|            0|            0|            0|            0|
 | _dvi_decoder_1_pllclk0        |             |             |             |             |             |             |             |
-| TS_user_app_1_video_receiver_1|     20.000ns|      5.069ns|          N/A|            0|            0|         1348|            0|
+| TS_user_app_1_video_receiver_1|     20.000ns|      5.176ns|          N/A|            0|            0|         1348|            0|
 | _dvi_decoder_1_pllclk2        |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
@@ -353,17 +349,17 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 29 secs 
-Total CPU time to PAR completion (all processors): 31 secs 
+Total REAL time to PAR completion: 34 secs 
+Total CPU time to PAR completion (all processors): 40 secs 
 
-Peak Memory Usage:  437 MB
+Peak Memory Usage:  447 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.
 Timing: Completed - No errors found.
 
 Number of error messages: 0
-Number of warning messages: 1
+Number of warning messages: 0
 Number of info messages: 0
 
 Writing design to file top.ncd

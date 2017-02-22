@@ -5,9 +5,6 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Xst" num="0" delta="new" >Include directory <arg fmt="%s" index="1">C:/Users/Alexis/Documents/common/include</arg> does not exist
-</msg>
-
 <msg type="warning" file="HDLCompiler" num="1016" delta="old" >"C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\top.v" Line 82: Port <arg fmt="%s" index="1">CLKOUT4</arg> is not connected to this instance
 </msg>
 
@@ -1106,13 +1103,7 @@
 <msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\user_app.v" Line 185: Assignment to <arg fmt="%s" index="1">c3_p3_rd_empty</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\user_app.v" Line 322: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\user_app.v" Line 338: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\user_app.v" Line 287: Assignment to <arg fmt="%s" index="1">curr_vpos</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\user_app.v" Line 282: Assignment to <arg fmt="%s" index="1">curr_vpos</arg> ignored, since the identifier is never used
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\common\hdl_sources\HDMI\HDMI_in\dvi_decoder\serdes_1_to_5_diff_data.v" Line 248: Result of <arg fmt="%d" index="1">2</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
@@ -1157,10 +1148,10 @@
 <msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\user_app.v" Line 63: Net &lt;<arg fmt="%s" index="1">c3_p0_wr_data[31]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\top.v" Line 215: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">HPos</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">11</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="189" delta="old" >"C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\top.v" Line 215: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">HPos</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">11</arg>-bit.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\top.v" Line 216: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">VPos</arg>&gt;. Formal port size is <arg fmt="%d" index="2">9</arg>-bit while actual signal size is <arg fmt="%d" index="1">11</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="189" delta="old" >"C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\top.v" Line 216: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">VPos</arg>&gt;. Formal port size is <arg fmt="%d" index="2">9</arg>-bit while actual signal size is <arg fmt="%d" index="1">11</arg>-bit.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">app_timer_tick</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -3373,15 +3364,15 @@
 <msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_ra_d</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
 </msg>
 
-<msg type="info" file="Xst" num="3231" delta="new" >The small RAM &lt;<arg fmt="%s" index="1">Mram_c1_reg_PWR_97_o_wide_mux_53_OUT</arg>&gt; will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+<msg type="info" file="Xst" num="3231" delta="old" >The small RAM &lt;<arg fmt="%s" index="1">Mram_c1_reg_PWR_97_o_wide_mux_53_OUT</arg>&gt; will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
 </msg>
 
-<msg type="info" file="Xst" num="3217" delta="new" >HDL ADVISOR - Register &lt;<arg fmt="%s" index="1">dout</arg>&gt; currently described with an asynchronous reset, could be combined with distributed RAM &lt;<arg fmt="%s" index="2">Mram_c1_reg_PWR_97_o_wide_mux_53_OUT</arg>&gt; for implementation on block RAM resources if you made this reset synchronous instead.
+<msg type="info" file="Xst" num="3217" delta="old" >HDL ADVISOR - Register &lt;<arg fmt="%s" index="1">dout</arg>&gt; currently described with an asynchronous reset, could be combined with distributed RAM &lt;<arg fmt="%s" index="2">Mram_c1_reg_PWR_97_o_wide_mux_53_OUT</arg>&gt; for implementation on block RAM resources if you made this reset synchronous instead.
 </msg>
 
 <msg type="info" file="Xst" num="3226" delta="old" >The RAM &lt;<arg fmt="%s" index="1">Mram_line_buffer</arg>&gt; will be implemented as a BLOCK RAM, absorbing the following register(s):</msg>
 
-<msg type="info" file="Xst" num="2385" delta="new" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">Mmult_PWR_85_o_v_count[8]_MuLt_9_OUT</arg> by adding <arg fmt="%d" index="2">2</arg> register level(s).
+<msg type="info" file="Xst" num="2385" delta="old" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">Mmult_PWR_85_o_v_count[8]_MuLt_9_OUT</arg> by adding <arg fmt="%d" index="2">2</arg> register level(s).
 </msg>
 
 <msg type="info" file="Xst" num="3226" delta="old" >The RAM &lt;<arg fmt="%s" index="1">Mram_rd_line_buffer_r</arg>&gt; will be implemented as a BLOCK RAM, absorbing the following register(s):</msg>
@@ -3393,10 +3384,10 @@
 <msg type="info" file="Xst" num="2385" delta="old" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">Mmult_vid_vpos[10]_PWR_8_o_MuLt_30_OUT</arg> by adding <arg fmt="%d" index="2">2</arg> register level(s).
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">init_add_rd_23</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">user_app</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">init_add_rd_23</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">user_app</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">init_add_rd_24</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">user_app</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">init_add_rd_24</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">user_app</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">init_add_rd_25</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">user_app</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -3450,13 +3441,13 @@
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">DRP_BKST</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">iodrp_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">init_add_wr_21</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mem_video__writer</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">init_add_wr_21</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mem_video__writer</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">init_add_wr_22</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mem_video__writer</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">init_add_wr_22</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mem_video__writer</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">init_add_wr_23</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mem_video__writer</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">init_add_wr_23</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mem_video__writer</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">init_add_wr_24</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mem_video__writer</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -3624,7 +3615,7 @@
 <msg type="info" file="Xst" num="1901" delta="old" >Instance <arg fmt="%s" index="1">PLL_clocks_gen</arg> in unit <arg fmt="%s" index="2">PLL_clocks_gen</arg> of type <arg fmt="%s" index="3">PLL_BASE</arg> has been replaced by <arg fmt="%s" index="4">PLL_ADV</arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">init_add_rd_21</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">user_app</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;init_add_rd_22&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">init_add_rd_21</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">user_app</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;init_add_rd_22&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">MCB_UIADDR_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">mcb_soft_calibration</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;MCB_UIADDR_3&gt; &lt;MCB_UIADDR_4&gt; </arg>

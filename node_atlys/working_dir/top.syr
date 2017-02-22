@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Reading design: top.prj
 
@@ -42,7 +42,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input File Name                    : "top.prj"
 Ignore Synthesis Constraint File   : NO
-Verilog Include Directory          : { "C:/Users/Alexis/Documents/common/include" "C:/Users/Alexis/Documents/Tareas/Project_motion_segmentation/common/include" }
+Verilog Include Directory          : { "C:/Users/Alexis/Documents/Tareas/Project_motion_segmentation/common/include" }
 
 ---- Target Parameters
 Output File Name                   : "top"
@@ -110,7 +110,6 @@ Cores Search Directories           : {"../../ip_cores/ipcore_dir/ddr2"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-WARNING:Xst - Include directory C:/Users/Alexis/Documents/common/include does not exist
 Analyzing Verilog file "C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\common\hdl_sources\HDMI\common\DRAM16XN.v" into library work
 Parsing module <DRAM16XN>.
 Analyzing Verilog file "C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\common\hdl_sources\HDMI\HDMI_in\dvi_decoder\serdes_1_to_5_diff_data.v" into library work
@@ -692,9 +691,7 @@ WARNING:HDLCompiler:1127 - "C:\Users\Alexis\Documents\Tareas\Project_motion_segm
 WARNING:HDLCompiler:1127 - "C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\user_app.v" Line 185: Assignment to c3_p3_rd_empty ignored, since the identifier is never used
 
 Elaborating module <mem_dispatcher__read(FIFO_LENGTH=64,WORDS_TO_READ=640,BUFF_ADDR_BITS=10,PORT_64_BITS=0)>.
-WARNING:HDLCompiler:413 - "C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\user_app.v" Line 322: Result of 32-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\user_app.v" Line 338: Result of 32-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:1127 - "C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\user_app.v" Line 287: Assignment to curr_vpos ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Alexis\Documents\Tareas\Project_motion_segmentation\node_atlys\hdl_sources\user_app.v" Line 282: Assignment to curr_vpos ignored, since the identifier is never used
 
 Elaborating module <video_receiver(H_RES_PIX=640,V_RES_PIX=480)>.
 
@@ -883,7 +880,7 @@ WARNING:Xst:3035 - Index value(s) does not match array range for signal <rd_line
     Found 8-bit subtractor for signal <PWR_8_o_buff_R[7]_sub_9_OUT> created at line 222.
     Found 8-bit subtractor for signal <PWR_8_o_buff_G[7]_sub_11_OUT> created at line 223.
     Found 8-bit subtractor for signal <PWR_8_o_buff_B[7]_sub_13_OUT> created at line 224.
-    Found 11x12-bit multiplier for signal <vid_vpos[10]_PWR_8_o_MuLt_30_OUT> created at line 291.
+    Found 11x12-bit multiplier for signal <vid_vpos[10]_PWR_8_o_MuLt_30_OUT> created at line 286.
     Found 11-bit comparator greater for signal <vid_hpos[10]_GND_8_o_LessThan_19_o> created at line 235
     Summary:
 	inferred   3 RAM(s).
@@ -2586,7 +2583,7 @@ Synthesizing Unit <mem_dispatcher__write>.
     Found 10-bit adder for signal <data_in__addr[9]_GND_87_o_add_20_OUT> created at line 113.
     Found 30-bit adder for signal <port_cmd_byte_addr[29]_GND_87_o_add_44_OUT> created at line 147.
     Found 7-bit 3-to-1 multiplexer for signal <micro_count[6]_GND_87_o_mux_46_OUT> created at line 131.
-    Found 1-bit 3-to-1 multiplexer for signal <lock_GND_87_o_MUX_674_o> created at line 131.
+    Found 1-bit 3-to-1 multiplexer for signal <lock_GND_87_o_MUX_635_o> created at line 131.
     Found 7-bit comparator greater for signal <PWR_86_o_micro_count[6]_LessThan_26_o> created at line 119
     Summary:
 	inferred   5 Adder/Subtractor(s).
@@ -4117,8 +4114,8 @@ Offset:              4.589ns (Levels of Logic = 4)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O            11   1.222   1.130  EDID_IN_SCL_IBUF (EDID_IN_SCL_IBUF)
-     LUT5:I1->O            1   0.203   0.944  user_app_1/video_receiver_1/edid_1/I2C_BYTE_TX_RX__1/Mmux_SDA_PIN_enable_out_SDA_PIN_enable_out_MUX_497_o1_SW1 (N563)
-     LUT6:I0->O            1   0.203   0.580  user_app_1/video_receiver_1/edid_1/I2C_BYTE_TX_RX__1/Mmux_SDA_PIN_enable_out_SDA_PIN_enable_out_MUX_497_o1 (user_app_1/video_receiver_1/edid_1/I2C_BYTE_TX_RX__1/SDA_PIN_enable_out_SDA_PIN_enable_out_MUX_497_o)
+     LUT5:I1->O            1   0.203   0.944  user_app_1/video_receiver_1/edid_1/I2C_BYTE_TX_RX__1/Mmux_SDA_PIN_enable_out_SDA_PIN_enable_out_MUX_458_o1_SW1 (N563)
+     LUT6:I0->O            1   0.203   0.580  user_app_1/video_receiver_1/edid_1/I2C_BYTE_TX_RX__1/Mmux_SDA_PIN_enable_out_SDA_PIN_enable_out_MUX_458_o1 (user_app_1/video_receiver_1/edid_1/I2C_BYTE_TX_RX__1/SDA_PIN_enable_out_SDA_PIN_enable_out_MUX_458_o)
      LUT4:I3->O            1   0.205   0.000  user_app_1/video_receiver_1/edid_1/I2C_BYTE_TX_RX__1/SDA_PIN_enable_out_rstpot1 (user_app_1/video_receiver_1/edid_1/I2C_BYTE_TX_RX__1/SDA_PIN_enable_out_rstpot1)
      FD:D                      0.102          user_app_1/video_receiver_1/edid_1/I2C_BYTE_TX_RX__1/SDA_PIN_enable_out
     ----------------------------------------
@@ -4366,14 +4363,14 @@ user_app_1/video_receiver_1/dvi_decoder_1/PLL_ISERDES/CLKOUT2|    5.361|        
 =========================================================================
 
 
-Total REAL time to Xst completion: 47.00 secs
-Total CPU time to Xst completion: 46.35 secs
+Total REAL time to Xst completion: 48.00 secs
+Total CPU time to Xst completion: 47.56 secs
  
 --> 
 
-Total memory usage is 318040 kilobytes
+Total memory usage is 323544 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 1068 (   0 filtered)
+Number of warnings : 1065 (   0 filtered)
 Number of infos    :  228 (   0 filtered)
 

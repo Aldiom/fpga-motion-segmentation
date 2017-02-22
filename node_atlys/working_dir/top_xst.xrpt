@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Wed Feb 22 14:19:48 2017">
+  <application stringID="Xst" timeStamp="Wed Feb 22 19:56:01 2017">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -75,7 +75,7 @@
       <item DEFAULT="100" label="-dsp_utilization_ratio" stringID="XST_DSPUTILIZATIONRATIO" value="100"/>
       <item DEFAULT="Auto" stringID="XST_LC" value="Auto"/>
       <item DEFAULT="Auto" label="-reduce_control_sets" stringID="XST_REDUCECONTROLSETS" value="Auto"/>
-      <item DEFAULT="" label="-vlgincdir" stringID="XST_VLGINCDIR" value="{ &quot;C:/Users/Alexis/Documents/common/include&quot; &quot;C:/Users/Alexis/Documents/Tareas/Project_motion_segmentation/common/include&quot; }"/>
+      <item DEFAULT="" label="-vlgincdir" stringID="XST_VLGINCDIR" value="{ &quot;C:/Users/Alexis/Documents/Tareas/Project_motion_segmentation/common/include&quot; }"/>
       <item DEFAULT="" label="-generics" stringID="XST_GENERICS" value="{ SYNT_RT_BE=1 }"/>
       <item DEFAULT="Yes" label="-fsm_extract" stringID="XST_FSMEXTRACT" value="YES"/>
       <item DEFAULT="Auto" label="-fsm_encoding" stringID="XST_FSMENCODING" value="Auto"/>
@@ -319,7 +319,7 @@
     </section>
     <section stringID="XST_ERRORS_STATISTICS">
       <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_ERRORS" value="0"/>
-      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_WARNINGS" value="1068"/>
+      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_WARNINGS" value="1065"/>
       <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_INFOS" value="228"/>
     </section>
   </application>

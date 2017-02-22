@@ -34,8 +34,8 @@ module user_app (
         // Video display (read video line from RAM)
         input  wire                    vid_preload_line,
         input  wire                    vid_active_pix,
-		  input  wire [10:0]             vid_hpos,
-		  input  wire [10:0]             vid_vpos,
+        input  wire [10:0]             vid_hpos,
+        input  wire [10:0]             vid_vpos,
         output reg  [23:0]             vid_data_out
     );
 	
@@ -241,8 +241,8 @@ module user_app (
     end
     
     mem_dispatcher__read #(
-		.FIFO_LENGTH    (64),
-		.WORDS_TO_READ  (H_IMG_RES),
+        .FIFO_LENGTH    (64),
+        .WORDS_TO_READ  (H_IMG_RES),
         .BUFF_ADDR_BITS (10),
         .PORT_64_BITS   (0)
 	)
@@ -251,7 +251,7 @@ module user_app (
 		.clk                ( c3_clk0 ),
         // Control
         .os_start           ( os_start_rd ),
-		.init_mem_addr      ( init_add_rd ),
+        .init_mem_addr      ( init_add_rd ),
         .busy_read_unit     (),
         // Data out
         .data_out__we       ( wr_en ),
@@ -273,16 +273,11 @@ module user_app (
     localparam INPUT_V_RES_PIX = 480;
     localparam [12:0] INPUT_H_RES_PIX_FIX = INPUT_H_RES_PIX*4;
     //
-    reg [2:0]  pix_count     = 0;
 
     reg [10:0] curr_vpos     = 0;
-    reg [2:0]  app_state     = 0;
-    reg [5:0]  delay_counter = 0;
     reg        active_line   = 0;
     
     wire       active_line__wire = (vid_preload_line) & (vid_vpos < V_IMG_RES);
-	 reg			aux; //This is temporary placeholder
-    //wire       copy_stop_cond    = (ncm_varram_addr == VARRAM_VAR_1_MAX_SIZE);
 
     always @( posedge app_clk ) begin
 
@@ -292,95 +287,12 @@ module user_app (
         end
         else
             os_start_rd <= 0;
-
-        // State 0: Waiting start signal
-        if( app_state == 0 ) begin
-            //rd_buff_2_addr  <= 0;
-            delay_counter   <= 0;
-            //ncm_varram_wen  <= 0;
-            //ncm_varram_addr <= 0;
-				aux	<= 0;
-            pix_count       <= 0;
-            //
-            if( app_timer_tick ) begin
-                curr_vpos      <= vid_vpos;
-                active_line    <= active_line__wire;
-                //ncm_varram_din <= { {1'b0,active_line__wire,13'd0}, 6'd0, vid_vpos }; // curr_vpos: 11 bits
-                app_state      <= 1;
-            end
-        end
-        
-        // State 1: Write first word to varram
-        if( app_state == 1 ) begin
-            if( /*ncm_varram_wen*/ aux == 0 ) begin
-                //ncm_varram_wen  <= 1;
-					 aux <= 1;
-            end
-            if( /*ncm_varram_wen*/ aux == 1 ) begin
-                //ncm_varram_wen  <= 0;
-					 aux <= 0;
-                app_state       <= (active_line)? (2) : (4);
-            end
-        end
-
-        // State 2: Wait for first data available from read dispatcher
-        if( app_state == 2 ) begin
-            delay_counter <= delay_counter + 1'b1;
-            if( delay_counter == 20 ) begin
-                app_state      <= 3;
-                //rd_buff_2_addr <= rd_buff_2_addr + 1'b1;
-            end
-        end
-        
-        // State 3: Copy data from buffer to varram
-        if( app_state == 3 ) begin
-            //rd_buff_2_addr <= rd_buff_2_addr + 1'b1;
-            pix_count      <= (pix_count == PIXELS_PER_WORD-1) ? (0) : (pix_count + 1'b1);
-            //
-            /*
-				if( pix_count == 0 ) begin
-                ncm_varram_din[31:24] <= Data_OUT_2_GRAY_8;
-            end
-            //
-            if( pix_count == 1 ) begin
-                ncm_varram_din[23:16] <= Data_OUT_2_GRAY_8;
-            end
-            //
-            if( pix_count == 2 ) begin
-                ncm_varram_din[15:8] <= Data_OUT_2_GRAY_8;
-            end */
-            //
-            if( pix_count == 3 ) begin
-					 aux <= 1; /*
-                ncm_varram_wen      <= 1;
-                ncm_varram_din[7:0] <= Data_OUT_2_GRAY_8;
-                ncm_varram_addr     <= ncm_varram_addr + 1'b1; */
-            end
-            else
-					 aux <= 0;
-                //ncm_varram_wen <= 0;
-            //
-            if( 1/*copy_stop_cond*/ ) begin
-                //ncm_varram_wen <= 0;
-					 aux <= 0;
-                app_state      <= 0;
-            end     
-        end
-        
-        // State 4: Copy black data to varram
-        if( app_state == 4 ) begin
-            //ncm_varram_din  <= 0;
-            //ncm_varram_addr <= ncm_varram_addr + 1'b1;
-            if( 1/*copy_stop_cond*/ ) begin
-                //ncm_varram_wen <= 0;
-					 aux <= 0;
-                app_state      <= 0;
-            end
-            else
-					 aux <= 1;
-                //ncm_varram_wen <= 1;
-        end
-        
+		  //
+        if( app_timer_tick ) begin
+            curr_vpos   <= vid_vpos;
+			   active_line <= active_line__wire;
+		  end
+				
     end // always
 
 

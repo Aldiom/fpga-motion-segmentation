@@ -1,0 +1,53 @@
+set -tmpdir "C:/Users/Alexis/Documents/Tareas/Network-Code-dev/HDL_implementation/NC-NIC/Atlys_board_demos/demo_0/node_1_2/working_dir/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Alexis/Documents/Tareas/Network-Code-dev/HDL_implementation/NC-NIC/Atlys_board_demos/demo_0/node_1_2/working_dir/xst"
+run -compileonly yes
+-p xc6slx45-3-csg324
+-top dvi_tx_fixed_res
+-opt_mode Speed
+-opt_level 2
+-power NO
+-iuc NO
+-keep_hierarchy No
+-netlist_hierarchy As_Optimized
+-rtlview No
+-glob_opt AllClockNets
+-read_cores YES
+-sd {"../../../../NCM_core/ipcore_dir/shift_ram_v9_0" "../../../../NCM_core/ipcore_dir/rx_mac_fifo" "../../../../NCM_core/ipcore_dir/fifo" "../../../../NCM_core/ipcore_dir/rcv_fifo_common" "../../../../NCM_core/ipcore_dir/var_ram" "../../../../NCM_core/ipcore_dir/tx_fifo" "../../../common/ipcore_dir/ddr2"  }
+-write_timing_constraints NO
+-cross_clock_analysis YES
+-hierarchy_separator /
+-bus_delimiter <>
+-case Maintain
+-slice_utilization_ratio 100
+-bram_utilization_ratio 100
+-dsp_utilization_ratio 100
+-lc Auto
+-reduce_control_sets Auto
+-vlgincdir { "C:/Users/Alexis/Documents/Tareas/Network-Code-dev/HDL_implementation/NC-NIC/common/include" }
+-generics { SYNT_RT_BE=1 }
+-fsm_extract YES -fsm_encoding Auto
+-safe_implementation No
+-fsm_style LUT
+-ram_extract Yes
+-ram_style Auto
+-rom_extract Yes
+-shreg_extract YES
+-rom_style Auto
+-auto_bram_packing NO
+-resource_sharing YES
+-async_to_sync NO
+-shreg_min_size 2
+-use_dsp48 Auto
+-iobuf YES
+-max_fanout 100000
+-bufg 16
+-register_duplication YES
+-register_balancing No
+-optimize_primitives NO
+-use_clock_enable Auto
+-use_sync_set Auto
+-use_sync_reset Auto
+-iob Auto
+-equivalent_register_removal YES
+-slice_utilization_ratio_maxmargin 5
+-ifn dvi_tx_fixed_res.prj

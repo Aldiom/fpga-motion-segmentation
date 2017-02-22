@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/!Documentos/2014/UW 2014-1/Papers Gonzalo/Repos/HDMI_in/working_dir/Hpos_Vpos_VidEn_gen_TB_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="Hpos_Vpos_VidEn_gen_TB" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/Hpos_Vpos_VidEn_gen_TB/vid_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">vid_clk</obj_property>
+      <obj_property name="ObjectShortName">vid_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Hpos_Vpos_VidEn_gen_TB/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Hpos_Vpos_VidEn_gen_TB/Vsync" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Vsync</obj_property>
+      <obj_property name="ObjectShortName">Vsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Hpos_Vpos_VidEn_gen_TB/Hsync" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Hsync</obj_property>
+      <obj_property name="ObjectShortName">Hsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Hpos_Vpos_VidEn_gen_TB/Active_pix" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Active_pix</obj_property>
+      <obj_property name="ObjectShortName">Active_pix</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Hpos_Vpos_VidEn_gen_TB/pixel_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pixel_in[23:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_in[23:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider14" type="divider">
+      <obj_property name="label">New Divider</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Hpos_Vpos_VidEn_gen_TB/Hpos" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Hpos[9:0]</obj_property>
+      <obj_property name="ObjectShortName">Hpos[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Hpos_Vpos_VidEn_gen_TB/Vpos" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Vpos[8:0]</obj_property>
+      <obj_property name="ObjectShortName">Vpos[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Hpos_Vpos_VidEn_gen_TB/VidEn" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">VidEn</obj_property>
+      <obj_property name="ObjectShortName">VidEn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Hpos_Vpos_VidEn_gen_TB/pixel_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pixel_out[23:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_out[23:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Hpos_Vpos_VidEn_gen_TB/line_ready" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">line_ready</obj_property>
+      <obj_property name="ObjectShortName">line_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Hpos_Vpos_VidEn_gen_TB/frame_ready" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">frame_ready</obj_property>
+      <obj_property name="ObjectShortName">frame_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider15" type="divider">
+      <obj_property name="label">New Divider</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+</wave_config>

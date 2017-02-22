@@ -1,0 +1,11 @@
+# PROMGEN: Xilinx Prom Generator P.20131013
+# Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+SOFTWARE_VERSION P.20131013
+DATE            02/17/2017 - 16:51
+SOURCE          C:\Users\Alexis\Documents\Tareas\Network-Code-dev\HDL_implementation\NC-NIC\Atlys_board_demos\demo_0\node_1_2\working_dir\top_flash.mcs
+DEVICE          16384K
+DATA_WIDTH      1
+FILL_DATA       0xFF
+SIGNATURE       0xE8AD26EB
+START_ADDRESS   0x00000000 END_ADDRESS 0x0016A9B3 DIRECTION_UP   "C:/Users/Alexis/Documents/Tareas/Network-Code-dev/HDL_implementation/NC-NIC/Atlys_board_demos/demo_0/node_1_2/working_dir/top.bit" 6slx45csg324

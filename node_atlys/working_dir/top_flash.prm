@@ -1,0 +1,17 @@
+PROMGEN: Xilinx Prom Generator P.20131013
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+promgen -w -p mcs -c FF -o C:\Users\Alexis\Documents\Tareas\Network-Code-dev\HDL_implementation\NC-NIC\Atlys_board_demos\demo_0\node_1_2\working_dir//top_flash -s 16384 -u 0000 C:/Users/Alexis/Documents/Tareas/Network-Code-dev/HDL_implementation/NC-NIC/Atlys_board_demos/demo_0/node_1_2/working_dir/top.bit -spi 
+
+PROM C:\Users\Alexis\Documents\Tareas\Network-Code-dev\HDL_implementation\NC-NIC\Atlys_board_demos\demo_0\node_1_2\working_dir\top_flash.prm map: Fri Feb 17 16:51:33 2017
+
+Calculating PROM checksum with fill value ff
+
+Format        Mcs86 (32-bit)
+Size          16384K
+PROM start    0000:0000
+PROM end      00ff:ffff
+PROM checksum e8ad26eb
+
+        Addr1        Addr2                     Date File(s)
+    0000:0000    0016:a9b3     Feb 17 14:10:33 2017 C:/Users/Alexis/Documents/Tareas/Network-Code-dev/HDL_implementation/NC-NIC/Atlys_board_demos/demo_0/node_1_2/working_dir/top.bit

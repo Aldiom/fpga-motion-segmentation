@@ -274,10 +274,10 @@ module user_app (
     localparam [12:0] INPUT_H_RES_PIX_FIX = INPUT_H_RES_PIX*4;
     //
 
-    reg [10:0] curr_vpos     = 0;
-    reg        active_line   = 0;
+    //reg [10:0] curr_vpos     = 0;
+    //reg        active_line   = 0;
     
-    wire       active_line__wire = (vid_preload_line) & (vid_vpos < V_IMG_RES);
+    //wire       active_line__wire = (vid_preload_line) & (vid_vpos < V_IMG_RES);
 
     always @( posedge app_clk ) begin
 
@@ -287,12 +287,12 @@ module user_app (
         end
         else
             os_start_rd <= 0;
-		  //
+		  /*
         if( app_timer_tick ) begin
             curr_vpos   <= vid_vpos;
 			   active_line <= active_line__wire;
 		  end
-				
+        */	
     end // always
 
 

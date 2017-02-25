@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module user_app (
+module background_substractor (
 	output wire        DDR2CLK_P,
 	output wire        DDR2CLK_N,
 	output wire        DDR2CKE,
@@ -32,11 +32,11 @@ module user_app (
 	input  wire        app_timer_tick,
 	input  wire        mem_clk,
 	// Video display (read video line from RAM)
-	input  wire                    vid_preload_line,
-	input  wire                    vid_active_pix,
-	input  wire [10:0]             vid_hpos,
-	input  wire [10:0]             vid_vpos,
-	output reg  [23:0]             vid_data_out
+	input  wire        vid_preload_line,
+	input  wire        vid_active_pix,
+	input  wire [10:0] vid_hpos,
+	input  wire [10:0] vid_vpos,
+	output reg  [23:0] vid_data_out
 	);
 
 	// ---------- PARAMETERS ----------
@@ -291,8 +291,35 @@ module user_app (
 		.port_rd_data_in    ( c3_p0_rd_data ),        
 		.port_rd_empty      ( c3_p0_rd_empty )    
 	);
-
-
+	/*
+	mem_dispatcher__write #
+	(
+		.MICRO_TOP        (64),
+		.MACRO_TOP        (H_IMG_RES),
+		.RAM_ADDR_BITS    (10),
+		.DDR_PORT_BITS    (32)
+	)
+	mem_dispatcher__write_unit 
+	(
+		.clk                ( c3_clk0 ),
+		// Interfaz de control
+		.os_start           (  ),
+		.init_mem_addr      (  ),
+		.busy_unit          (),
+		// Entrada de datos
+		.data_in__addr      (  ),
+		.data_in            ( {8'd0, } ),
+		// Interfaz con memoria externa
+		.mem_calib_done     ( c3_calib_done ),
+		.port_cmd_en        ( c3_p3_cmd_en ),
+		.port_cmd_instr     ( c3_p3_cmd_instr ),
+		.port_cmd_bl        ( c3_p3_cmd_bl ),
+		.port_cmd_byte_addr ( c3_p3_cmd_byte_addr ),
+		.port_wr_en         ( c3_p3_wr_en ),
+		.port_wr_data_out   ( c3_p3_wr_data ),
+		.port_wr_full       ( c3_p3_wr_full )
+	);   
+	*/
 	localparam INPUT_H_RES_PIX = 640;
 	localparam INPUT_V_RES_PIX = 480;
 	localparam [12:0] INPUT_H_RES_PIX_FIX = INPUT_H_RES_PIX*4;
@@ -313,17 +340,17 @@ module user_app (
 
 		if( vid_preload_line ) begin
 			os_start_rd <= 1;
-			init_add_rd <= vid_vpos*INPUT_H_RES_PIX_FIX; // TODO: Eliminate multiplier
+			init_add_rd <= vid_vpos * INPUT_H_RES_PIX_FIX; // TODO: Eliminate multiplier
 			//op_block_buffer[1:4] <= op_block_buffer[0:3];
 			//op_block_buffer[0] <= op_line_buffer; //this not good...
 			/*
 			for( integer i = 0; i < 5; i = i+1 ) begin
-			for( integer j = 0; j < H_IMG_RES; j = j+1 ) begin
-			if( i == 0 )
-			op_block_buffer[i][j] <= op_line_buffer[j];
-			else
-			op_block_buffer[i][j] <= op_block_buffer[i-1][j];
-			end
+				for( integer j = 0; j < H_IMG_RES; j = j+1 ) begin
+					if( i == 0 )
+						op_block_buffer[i][j] <= op_line_buffer[j];
+					else
+						op_block_buffer[i][j] <= op_block_buffer[i-1][j];
+				end
 			end
 			*/ 
 		end

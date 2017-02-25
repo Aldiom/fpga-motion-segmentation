@@ -140,8 +140,8 @@ module top (
 		.clk    (clk_25MHz)
 	);
 
-	user_app
-	user_app_1 (
+	background_substractor
+	Bg_sub (
 		.DDR2CLK_P        (DDR2CLK_P),
 		.DDR2CLK_N        (DDR2CLK_N),
 		.DDR2CKE          (DDR2CKE),

@@ -9,8 +9,10 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/Automatic `includes</ClosedNode>
          <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project motion segmentation|node_atlys|hdl_sources|top.v</ClosedNode>
-         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/HDMI_out_1 - dvi_tx_fixed_res</ClosedNode>
-         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/user_app_1 - user_app</ClosedNode>
+         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/HDMI_out_1 - dvi_tx_fixed_res/dvi_tx0 - dvi_encoder_top</ClosedNode>
+         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/user_app_1 - user_app/DDR2_MCB_1 - ddr2_user_interface</ClosedNode>
+         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/user_app_1 - user_app/mem_video__writer_1 - mem_video__writer</ClosedNode>
+         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/user_app_1 - user_app/video_receiver_1 - video_receiver</ClosedNode>
          <ClosedNode>PROJECT</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
@@ -18,7 +20,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000158000000020000000000000000000000000200000064ffffffff000000810000000300000002000001580000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000210000000020000000000000000000000000200000064ffffffff000000810000000300000002000002100000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>top (C:/Users/Alexis/Documents/Tareas/Project_motion_segmentation/node_atlys/hdl_sources/top.v)</CurrentItem>
    </ItemView>
@@ -28,28 +30,29 @@
          <ClosedNode>Configure Target Device</ClosedNode>
          <ClosedNode>Design Utilities</ClosedNode>
          <ClosedNode>Implement Design</ClosedNode>
-         <ClosedNode>Synthesize - XST</ClosedNode>
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Design Summary/Reports</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000e7000000010000000100000000000000000000000064ffffffff000000810000000000000001000000e70000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Design Summary/Reports</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
-      <SelectedItems/>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <SelectedItems>
+         <SelectedItem>ddr2.xco</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >12</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000252000000040101000100000000000000000000000064ffffffff000000810000000000000004000000ac0000000100000000000000d70000000100000000000000660000000100000000000000690000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000001010000000000000000000000000000000000000252000000040101000100000000000000000000000064ffffffff000000810000000000000004000000ac0000000100000000000000d70000000100000000000000660000000100000000000000690000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>chnlbond.v</CurrentItem>
+      <CurrentItem>ddr2.xco</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -77,6 +80,19 @@
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Design Utilities</CurrentItem>
    </ItemView>
-   <SourceProcessView>000000ff00000000000000020000011b0000011b01000000050100000002</SourceProcessView>
+   <SourceProcessView>000000ff00000000000000020000017d000000e101000000050100000002</SourceProcessView>
    <CurrentView>Implementation</CurrentView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XCO" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Manage Cores</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Manage Cores</CurrentItem>
+   </ItemView>
 </Project>

@@ -189,10 +189,6 @@ module background_substractor (
 
 
 	// Read line-buffer
-	//reg [7:0] rd_line_buffer_1 [0:H_IMG_RES-1];
-	//reg [7:0] rd_line_buffer_2 [0:H_IMG_RES-1];
-	//reg [7:0] Data_OUT_1_GRAY_8;
-	//Inserted by me -----------
 	reg [7:0] rd_line_buffer_r [0:H_IMG_RES-1];
 	reg [7:0] rd_line_buffer_g [0:H_IMG_RES-1];
 	reg [7:0] rd_line_buffer_b [0:H_IMG_RES-1];
@@ -201,44 +197,38 @@ module background_substractor (
 	reg [7:0] Data_OUT_1_BLUE_8;
 	reg [23:0] op_block_buffer [0:4][0:H_IMG_RES-1];
 	reg [23:0] op_line_buffer [0:H_IMG_RES-1];
-	//--------------------------
-	//reg [7:0] Data_OUT_2_GRAY_8;
 	wire [9:0] wr_buff_add;
 	//reg  [9:0] rd_buff_2_addr = 0;
 	wire       wr_en;
 	//
 	wire [31:0] buff_data_in;
-	// RGB888 to GRAY8 conversion
+	// RGB888 from read byte
 	wire [7:0]  buff_R      = buff_data_in[23:16];
 	wire [7:0]  buff_G      = buff_data_in[15:8];
 	wire [7:0]  buff_B      = buff_data_in[7:0];
-	//wire [9:0]  buff_G_conv = buff_G << 1;
-	//wire [7:0]  buff_gray   = (buff_R + buff_G_conv + buff_B) >> 2;
-	wire [9:0] r_px = (wr_buff_add == H_IMG_RES-1) ? -10'b1 : 10'b1;
+	
+	wire [9:0] r_px = (wr_buff_add == H_IMG_RES-1) ? -10'b1 : 10'b1;//this was for filter
 	wire [9:0] l_px = (wr_buff_add == 0) ? -10'b1 : 10'b1;
 	// Write buffer from external RAM and RAM clock
 	always @( posedge c3_clk0 ) begin
 		if( wr_en ) begin
-			//rd_line_buffer_1[wr_buff_add] <= buff_gray;
-			//rd_line_buffer_2[wr_buff_add] <= buff_gray;
-			//Inserted by me ---------------
 			op_line_buffer[wr_buff_add] <= buff_data_in[23:0]; //filling line buffer
 			//TOO BIG!! use RAM instead
-			rd_line_buffer_r[wr_buff_add] <= buff_B;/*
+			rd_line_buffer_r[wr_buff_add] <= buff_G;/*
 			( op_block_buffer[1][wr_buff_add+r_px][23:16] 
 			+ op_block_buffer[3][wr_buff_add+r_px][23:16]
 			+ op_block_buffer[2][wr_buff_add+r_px][23:16] << 1
 			+ op_block_buffer[2][wr_buff_add-l_px][23:16] << 1
 			+ op_block_buffer[1][wr_buff_add-l_px][23:16]
 			+ op_block_buffer[3][wr_buff_add-l_px][23:16] ) >> 3;*/
-			rd_line_buffer_g[wr_buff_add] <= buff_R;/*
+			rd_line_buffer_g[wr_buff_add] <= buff_B;/*
 			( op_block_buffer[1][wr_buff_add+r_px][15:8] 
 			+ op_block_buffer[3][wr_buff_add+r_px][15:8]
 			+ op_block_buffer[2][wr_buff_add+r_px][15:8] << 1
 			+ op_block_buffer[2][wr_buff_add-l_px][15:8] << 1
 			+ op_block_buffer[1][wr_buff_add-l_px][15:8]
 			+ op_block_buffer[3][wr_buff_add-l_px][15:8] ) >> 3;*/
-			rd_line_buffer_b[wr_buff_add] <= buff_G;/*
+			rd_line_buffer_b[wr_buff_add] <= buff_R;/*
 			( op_block_buffer[1][wr_buff_add+r_px][7:0] 
 			+ op_block_buffer[3][wr_buff_add+r_px][7:0]
 			+ op_block_buffer[2][wr_buff_add+r_px][7:0] << 1
@@ -246,22 +236,16 @@ module background_substractor (
 			+ op_block_buffer[1][wr_buff_add-l_px][7:0]
 			+ op_block_buffer[3][wr_buff_add-l_px][7:0] ) >> 3;*/
 
-			//------------------------------
 		end
 	end
 
 	// Read buffer with video clock
 	always @( posedge app_clk ) begin
-		// First buffer: Display data
-		//Data_OUT_1_GRAY_8 <= (vid_hpos < H_IMG_RES) ? (rd_line_buffer_1[vid_hpos]) : (8'd0);
-		//Inserted by me ---------------------
+		// Display data
 		Data_OUT_1_RED_8 <= (vid_hpos < H_IMG_RES) ? (rd_line_buffer_r[vid_hpos]) : (8'd0);
 		Data_OUT_1_GREEN_8 <= (vid_hpos < H_IMG_RES) ? (rd_line_buffer_g[vid_hpos]) : (8'd0);
 		Data_OUT_1_BLUE_8 <= (vid_hpos < H_IMG_RES) ? (rd_line_buffer_b[vid_hpos]) : (8'd0);
-		//------------------------------------
 		vid_data_out      <= { Data_OUT_1_RED_8, Data_OUT_1_GREEN_8, Data_OUT_1_BLUE_8 };
-		// Second buffer: Send data
-		//Data_OUT_2_GRAY_8 <= rd_line_buffer_2[rd_buff_2_addr];
 	end
 
 	mem_dispatcher__read #(

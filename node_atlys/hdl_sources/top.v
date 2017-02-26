@@ -37,30 +37,6 @@ module top (
 	input  wire [7:0]  switch
 	);
 
-
-	// ---------- PARAMETERS ----------
-	// Value overwritten by synthesis tools for different configs
-	parameter SYNT_RT_BE = 1;
-
-	// ---------- LOCAL PARAMETERS ----------
-	// -- Rom configurations
-	// Version 0: Only RT traffic
-	localparam PROG_MEM_RT_FILE = "../hdl_sources/NCM_mem_node_2__prog.coe";
-	localparam CONF_MEM_RT_FILE = "../hdl_sources/NCM_mem_node_2__cfg.coe";
-	// Version 1: Send RT & BE traffic
-	localparam PROG_MEM_RT_BE_FILE = "../hdl_sources/NCM_mem_node_1__prog.coe";
-	localparam CONF_MEM_RT_BE_FILE = "../hdl_sources/NCM_mem_node_1__cfg.coe";
-	// -- Final Rom content
-	localparam PROG_MEM_INIT_FILE = (SYNT_RT_BE)? (PROG_MEM_RT_BE_FILE) : (PROG_MEM_RT_FILE);
-	localparam CONF_MEM_INIT_FILE = (SYNT_RT_BE)? (CONF_MEM_RT_BE_FILE) : (CONF_MEM_RT_FILE);
-	// -- Other params
-	localparam [15:0]  NC_TYPE_SYNC      = 16'h5CFF;
-	localparam [15:0]  NC_TYPE_ACK       = 16'h5CAA;
-	localparam [15:0]  NC_TYPE_DATA_RT   = 16'h5CE0;
-	localparam [15:0]  NC_TYPE_DATA_BE   = 16'h0805;
-	localparam         NC_MY_DEVICE_TYPE = (SYNT_RT_BE)? (1'b0) : (1'b1); // 0=Master; 1=Slave
-
-
 	// ---------- MODULE ----------
 	wire        reset, reset_sync, rst_button;
 	wire [10:0] hpos, vpos, hpos_out;
@@ -141,7 +117,7 @@ module top (
 	);
 
 	background_substractor
-	Bg_sub (
+	BG_sub (
 		.DDR2CLK_P        (DDR2CLK_P),
 		.DDR2CLK_N        (DDR2CLK_N),
 		.DDR2CKE          (DDR2CKE),

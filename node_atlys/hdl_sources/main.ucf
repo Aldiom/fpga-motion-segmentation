@@ -9,20 +9,20 @@
  NET "led(0)"  LOC = "U18";
  NET "led(1)"  LOC = "M14";
  NET "led(2)"  LOC = "N14"; 
-# NET "led(3)"  LOC = "l14";
-# NET "led(4)"  LOC = "m13";
-# NET "led(5)"  LOC = "d4";
-# NET "led(6)"  LOC = "p16";
-# NET "led(7)"  LOC = "n12";
+# NET "led(3)"  LOC = "L14";
+# NET "led(4)"  LOC = "M13";
+# NET "led(5)"  LOC = "D4";
+# NET "led(6)"  LOC = "P16";
+# NET "led(7)"  LOC = "N12";
 
  NET "switch(0)"  LOC = "A10";
  NET "switch(1)"  LOC = "D14"; 
  NET "switch(2)"  LOC = "C14";
-# NET "switch(3)"  LOC = "p15";
-# NET "switch(4)"  LOC = "p12";
-# NET "switch(5)"  LOC = "r5";
-# NET "switch(6)"  LOC = "t5";
-# NET "switch(7)"  LOC = "e4";
+# NET "switch(3)"  LOC = "P15";
+# NET "switch(4)"  LOC = "P12";
+# NET "switch(5)"  LOC = "R5";
+# NET "switch(6)"  LOC = "T5";
+# NET "switch(7)"  LOC = "E4";
  
 # USB UART Connector
 # NET "PIN_UartRx" LOC = "A16" | IOSTANDARD = LVCMOS25; # Bank = 0, Pin name = IO_L66N_SCP0, Sch name = USBB-RXD
@@ -44,7 +44,7 @@
  NET "EDID_IN_SDA"  LOC = "M18" | IOSTANDARD = LVCMOS25;
 
 # Constraint for RX0
- NET "user_app_1/video_receiver_1/dvi_decoder_1/rxclk" TNM_NET = DVI_CLOCK0;
+ NET "BG_sub/video_receiver_1/dvi_decoder_1/rxclk" TNM_NET = DVI_CLOCK0;
  TIMESPEC TS_DVI_CLOCK0 = PERIOD "DVI_CLOCK0" 25 MHz HIGH 50%;
 
 
@@ -140,68 +140,3 @@
  NET "*/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/selfrefresh_mcb_mode" TIG;
  NET "*/c?_pll_lock" TIG;
  NET "*/memc?_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/CKE_Train" TIG;
- 
- 
- 
-############################################################
-# External GMII Constraints                                #
-############################################################
-# NET phy_rst_n 	LOC=G13  |  TIG  |  IOSTANDARD=LVCMOS25;
-# NET gmii_txd<0> LOC=H16  |  IOSTANDARD=LVCMOS25 | SLEW = FAST | IOB = force;
-# NET gmii_txd<1> LOC=H13  |  IOSTANDARD=LVCMOS25 | SLEW = FAST | IOB = force;
-# NET gmii_txd<2> LOC=K14  |  IOSTANDARD=LVCMOS25 | SLEW = FAST | IOB = force;
-# NET gmii_txd<3> LOC=K13  |  IOSTANDARD=LVCMOS25 | SLEW = FAST | IOB = force;
-# NET gmii_txd<4> LOC=J13  |  IOSTANDARD=LVCMOS25 | SLEW = FAST | IOB = force;
-# NET gmii_txd<5> LOC=G14  |  IOSTANDARD=LVCMOS25 | SLEW = FAST | IOB = force;
-# NET gmii_txd<6> LOC=H12  |  IOSTANDARD=LVCMOS25 | SLEW = FAST | IOB = force;
-# NET gmii_txd<7> LOC=K12  |  IOSTANDARD=LVCMOS25 | SLEW = FAST | IOB = force;
-# NET gmii_tx_en 	LOC=H15  |  IOSTANDARD=LVCMOS25 | SLEW = FAST | IOB = force;
-# NET gmii_tx_er 	LOC=G18  |  IOSTANDARD=LVCMOS25 | SLEW = FAST | IOB = force;
-# NET gmii_tx_clk LOC=L12  |  IOSTANDARD=LVCMOS25 | SLEW = FAST | IOB = force;
-#
-# NET gmii_rxd<0> LOC=G16  |  IOSTANDARD=LVCMOS25 | IOB = force;
-# NET gmii_rxd<1> LOC=H14  |  IOSTANDARD=LVCMOS25 | IOB = force;
-# NET gmii_rxd<2> LOC=E16  |  IOSTANDARD=LVCMOS25 | IOB = force;
-# NET gmii_rxd<3> LOC=F15  |  IOSTANDARD=LVCMOS25 | IOB = force;
-# NET gmii_rxd<4> LOC=F14  |  IOSTANDARD=LVCMOS25 | IOB = force;
-# NET gmii_rxd<5> LOC=E18  |  IOSTANDARD=LVCMOS25 | IOB = force;
-# NET gmii_rxd<6> LOC=D18  |  IOSTANDARD=LVCMOS25 | IOB = force;
-# NET gmii_rxd<7> LOC=D17  |  IOSTANDARD=LVCMOS25 | IOB = force;
-# NET gmii_rx_dv 	LOC=F17  |  IOSTANDARD=LVCMOS25 | IOB = force;
-# NET gmii_rx_er 	LOC=F18  |  IOSTANDARD=LVCMOS25 | IOB = force;
-# NET gmii_rx_clk LOC=K15  |  IOSTANDARD=LVCMOS25;
-
-############################################################
-# Clock Period Constraints                                 #
-############################################################
-
-# NET "gmii_rx_clk" TNM_NET = "gmii_rx_clk";
-# TIMESPEC "TS_gmii_rx_clk" = PERIOD "gmii_rx_clk" 8 ns HIGH 50 %;
-#
-# NET "gmii_tx_clk" TNM_NET = "gmii_tx_clk";
-# TIMESPEC "TS_gmii_tx_clk" = PERIOD "gmii_tx_clk" 8 ns HIGH 50 %;
-
-# NET "tx_clk" TNM_NET = "tx_clk"; # Test, these constraints should be derived from the clk100_i NET
-# TIMESPEC "TS_tx_clk" = PERIOD "tx_clk" 8 ns HIGH 50 %;
-
-# NET "ncm_clk" TNM_NET = "ncm_clk";
-# TIMESPEC "TS_ncm_clk" = PERIOD "ncm_clk" 8 ns HIGH 50 %;
-############################################################
-# The following are required to maximise setup/hold        #
-############################################################
-
-# INST "gmii_txd<?>" SLEW = FAST;
-# INST "gmii_tx_en"  SLEW = FAST;
-# INST "gmii_tx_er"  SLEW = FAST;
-# INST "gmii_tx_clk" SLEW = FAST;
-
-############################################################
-# For Setup and Hold time analysis on GMII inputs          #
-############################################################
-
-# Identify GMII Rx Pads only.  
-# This prevents setup/hold analysis being performed on false inputs,
-# eg, the configuration_vector inputs.
-# INST "gmii_rxd<?>" TNM = IN_GMII; 
-# INST "gmii_rx_er"  TNM = IN_GMII;
-# INST "gmii_rx_dv"  TNM = IN_GMII;

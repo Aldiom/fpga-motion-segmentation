@@ -6,9 +6,9 @@
  NET "clk100_i" TNM_NET = clk100_i; 
  TIMESPEC TS_clk100_i = PERIOD "clk100_i" 100 MHz HIGH 50%; # 10ns
 
- NET "led(0)"  LOC = "U18";
- NET "led(1)"  LOC = "M14";
- NET "led(2)"  LOC = "N14"; 
+# NET "led(0)"  LOC = "U18";
+# NET "led(1)"  LOC = "M14";
+# NET "led(2)"  LOC = "N14"; 
 # NET "led(3)"  LOC = "L14";
 # NET "led(4)"  LOC = "M13";
 # NET "led(5)"  LOC = "D4";

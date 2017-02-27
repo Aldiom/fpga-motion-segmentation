@@ -44,7 +44,7 @@ module top (
 
 	assign rst_button = ~rst_button_n;
 
-	assign led = switch;
+	//assign led = switch;
 
 	// -- Clocks
 	wire pll_in_clk, pll_feed_back;
@@ -150,7 +150,9 @@ module top (
 		.vid_active_pix   (vid_active_pix),
 		.vid_hpos         (hpos),
 		.vid_vpos         (vpos),
-		.vid_data_out     (disp_pixel_data)
+		.vid_data_out     (disp_pixel_data),
+		// Switches
+		.switch           (switch)
 	);
 
 	resetsync

@@ -145,7 +145,7 @@ module mem_dispatcher__read
 			fifo_count       <= 0;
 			state            <= 3;
 
-			port_cmd_byte_addr <= port_cmd_byte_addr + ADDR_STEP; // incrementos en direcciones de 8 bytes
+			port_cmd_byte_addr <= port_cmd_byte_addr + ADDR_STEP; // incrementos en direcciones de 64 words
 			port_cmd_en        <= 1;
 		end // Estado 2
 

@@ -143,7 +143,7 @@ module mem_dispatcher__write #(
 			if( first_burst )
 				first_burst <= 0;
 			else
-				port_cmd_byte_addr <= port_cmd_byte_addr + 10'd256; // incrementos en direcciones de 8 bytes
+				port_cmd_byte_addr <= port_cmd_byte_addr + 10'd256; // incrementos en direcciones de 64 words
 		end
 
 	end // always

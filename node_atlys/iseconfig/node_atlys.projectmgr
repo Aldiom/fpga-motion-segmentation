@@ -9,7 +9,17 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/Automatic `includes</ClosedNode>
          <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project motion segmentation|node_atlys|hdl_sources|top.v</ClosedNode>
+         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/BG_sub - background_substractor/DDR2_MCB_1 - ddr2_user_interface</ClosedNode>
+         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/BG_sub - background_substractor/video_receiver_1 - video_receiver</ClosedNode>
+         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/Bg_sub - background_substractor/DDR2_MCB_1 - ddr2_user_interface</ClosedNode>
+         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/Bg_sub - background_substractor/mem_video__writer_1 - mem_video__writer</ClosedNode>
+         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/Bg_sub - background_substractor/video_receiver_1 - video_receiver/dvi_decoder_1 - dvi_decoder</ClosedNode>
+         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/Bg_sub - background_substractor/video_receiver_1 - video_receiver/edid_1 - EDID_I2C</ClosedNode>
          <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/HDMI_out_1 - dvi_tx_fixed_res/dvi_tx0 - dvi_encoder_top</ClosedNode>
+         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/bg_sub - background_substractor/DDR2_MCB_1 - ddr2_user_interface</ClosedNode>
+         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/bg_sub - background_substractor/mem_video__writer_1 - mem_video__writer</ClosedNode>
+         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/bg_sub - background_substractor/video_receiver_1 - video_receiver</ClosedNode>
+         <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/stage_1 - background_substractor/video_receiver_1 - video_receiver</ClosedNode>
          <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/user_app_1 - user_app/DDR2_MCB_1 - ddr2_user_interface</ClosedNode>
          <ClosedNode>/top C:|Users|Alexis|Documents|Tareas|Project_motion_segmentation|node_atlys|hdl_sources|top.v/user_app_1 - user_app/video_receiver_1 - video_receiver</ClosedNode>
          <ClosedNode>PROJECT</ClosedNode>
@@ -29,14 +39,15 @@
          <ClosedNode>Configure Target Device</ClosedNode>
          <ClosedNode>Design Utilities</ClosedNode>
          <ClosedNode>Implement Design</ClosedNode>
+         <ClosedNode>Synthesize - XST</ClosedNode>
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
          <SelectedItem></SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >2</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000e7000000010000000100000000000000000000000064ffffffff000000810000000000000001000000e70000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -93,5 +104,19 @@
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Manage Cores</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
    </ItemView>
 </Project>

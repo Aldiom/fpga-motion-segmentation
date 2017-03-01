@@ -37,6 +37,7 @@ module background_substractor (
 	input  wire [10:0] vid_hpos,
 	input  wire [10:0] vid_vpos,
 	output reg  [23:0] vid_data_out,
+	output wire        foreground,
 	// Switches
 	input  wire [7:0]  switch
 	);
@@ -45,9 +46,7 @@ module background_substractor (
 	//none
 	
 	// ---------- LOCAL PARAMETERS ----------
-	localparam VARRAM_VAR_1_MAX_SIZE = 160; // 150 = 600 px; 160 = 640 px
-	localparam PIXELS_PER_WORD       = 4;   // 8 bits gray-scale
-	localparam H_IMG_RES             = PIXELS_PER_WORD*VARRAM_VAR_1_MAX_SIZE;
+	localparam H_IMG_RES             = 640;
 	localparam V_IMG_RES             = 480;
 	localparam FG_TRESHOLD           = 60;
 
@@ -285,7 +284,7 @@ module background_substractor (
 	
 	wire [9:0] total_diff = diff_buffer_r[vid_hpos] + diff_buffer_g[vid_hpos] + diff_buffer_b[vid_hpos];
 	
-	wire foreground = (total_diff > FG_TRESHOLD);
+	assign foreground = (total_diff > FG_TRESHOLD);
 	
 	// Read buffer with video clock
 	always @( posedge app_clk ) begin

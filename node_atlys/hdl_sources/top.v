@@ -40,7 +40,8 @@ module top (
 	// ---------- MODULE ----------
 	wire        reset, reset_sync, rst_button;
 	wire [10:0] hpos, vpos, hpos_out;
-	wire [23:0] disp_pixel_data;
+	wire [23:0] disp_pixel_data1, disp_pixel_data2;
+	wire [23:0] disp_pixel_data = switch[3] ? disp_pixel_data1 : disp_pixel_data2;
 
 	assign rst_button = ~rst_button_n;
 
@@ -108,6 +109,7 @@ module top (
 
 	wire preload_vid_line, vid_active_pix;
 	wire vid_HSync, app_timer_tick;
+	wire foregnd_px;
 
 	one_shot
 	one_shot_1 (
@@ -150,9 +152,23 @@ module top (
 		.vid_active_pix   (vid_active_pix),
 		.vid_hpos         (hpos),
 		.vid_vpos         (vpos),
-		.vid_data_out     (disp_pixel_data),
+		.vid_data_out     (disp_pixel_data1),
+		.foreground       (foregnd_px),
 		// Switches
 		.switch           (switch)
+	);
+	
+	blob_analyzer
+	blob_analyzer1 (
+		.app_clk          (clk_25MHz), // Same as vid_clk
+		.app_timer_tick   (app_timer_tick),
+		.mem_clk          (clk_100MHz),
+		.vid_preload_line (preload_vid_line),
+		.vid_active_pix   (vid_active_pix),
+		.vid_hpos         (hpos),
+		.vid_vpos         (vpos),
+		.vid_data_out     (disp_pixel_data2),
+		.foregnd_px       (foregnd_px)
 	);
 
 	resetsync

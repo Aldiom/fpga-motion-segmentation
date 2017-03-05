@@ -1,6 +1,6 @@
 iMPACT Version: Oct 13 2013 10:22:21
 
-iMPACT log file Started on Wed Mar 01 14:12:17 2017
+iMPACT log file Started on Sat Mar 04 23:53:42 2017
 
 Preference Table
 Name                 Setting             
@@ -57,7 +57,7 @@ done.
 '1': Reading status register contents...
 [0] CRC ERROR                                                              :        0
 [1] IDCODE ERROR                                                           :        0
-[2] DCM LOCK STATUS                                                        :        0
+[2] DCM LOCK STATUS                                                        :        1
 [3] GTS_CFG_B STATUS                                                       :        1
 [4] GWE STATUS                                                             :        1
 [5] GHIGH STATUS                                                           :        1
@@ -72,11 +72,11 @@ done.
 [14] SUSPEND STATUS                                                        :        0
 [15] FALLBACK STATUS                                                       :        0
 INFO:iMPACT:2219 - Status register values:
-INFO:iMPACT - 0001 1100 1010 1100 
+INFO:iMPACT - 0011 1100 1010 1100 
 INFO:iMPACT:579 - '1': Completed downloading bit file to device.
 INFO:iMPACT:188 - '1': Programming completed successfully.
  LCK_cycle = NoWait.
 LCK cycle: NoWait
 INFO:iMPACT - '1': Checking done pin....done.
 '1': Programmed successfully.
-Elapsed time =      8 sec.
+Elapsed time =      9 sec.

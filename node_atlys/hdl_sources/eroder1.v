@@ -25,7 +25,8 @@ module eroder1(
 	
 	always @(posedge clk) begin
 		// Save a few lines of input image in buffer
-		line_wr <= (line_wr < WIN_SIZE+1) ? line_wr + 1 : 0;
+		if(hpos == H_IMG_RES-1)
+			line_wr <= (line_wr < WIN_SIZE) ? line_wr + 1 : 0;
 	end
 	
 	wire [10:0] vpos_off = (vpos > WIN_SIZE/2) ? vpos - WIN_SIZE/2 - 1 : vpos + V_IMG_RES - WIN_SIZE/2 - 1;
@@ -42,10 +43,10 @@ module eroder1(
 			//lines[H_IMG_RES*i +: H_IMG_RES] <= {in_pix, lines[H_IMG_RES*i +: (H_IMG_RES-1)]};
 		end
 		else begin
-			if(hpos < H_IMG_RES - WIN_SIZE/2) 
-				shift_in0 = line0[hpos + WIN_SIZE/2];
+			if(hpos < H_IMG_RES - WIN_SIZE/2 - 1) 
+				shift_in0 = line0[hpos + WIN_SIZE/2 + 1];
 			else
-				shift_in0 = line0[hpos - H_IMG_RES + WIN_SIZE/2];
+				shift_in0 = line0[hpos - H_IMG_RES + WIN_SIZE/2 + 1];
 			sh_reg[WIN_SIZE*0+:WIN_SIZE] <= {shift_in0, sh_reg[WIN_SIZE*0+1+:WIN_SIZE-1]};
 		end
 	end
@@ -60,10 +61,10 @@ module eroder1(
 			//lines[H_IMG_RES*i +: H_IMG_RES] <= {in_pix, lines[H_IMG_RES*i +: (H_IMG_RES-1)]};
 		end
 		else begin
-			if(hpos < H_IMG_RES - WIN_SIZE/2) 
-				shift_in1 = line1[hpos + WIN_SIZE/2];
+			if(hpos < H_IMG_RES - WIN_SIZE/2 - 1) 
+				shift_in1 = line1[hpos + WIN_SIZE/2 + 1];
 			else
-				shift_in1 = line1[hpos - H_IMG_RES + WIN_SIZE/2];
+				shift_in1 = line1[hpos - H_IMG_RES + WIN_SIZE/2 + 1];
 			sh_reg[WIN_SIZE*1+:WIN_SIZE] <= {shift_in1, sh_reg[WIN_SIZE*1+1+:WIN_SIZE-1]};
 		end
 	end
@@ -73,15 +74,15 @@ module eroder1(
 	always @(posedge clk) begin
 		if(line_wr == 3'd2) begin
 			line2[hpos] <= in_pix;
-			if(hpos < WIN_SIZE/2 + 1) 
+			if(hpos < WIN_SIZE/2 + 1)
 				sh_reg[WIN_SIZE*2+:WIN_SIZE] <= {in_pix, sh_reg[WIN_SIZE*2+1+:WIN_SIZE-1]};
 			//lines[H_IMG_RES*i +: H_IMG_RES] <= {in_pix, lines[H_IMG_RES*i +: (H_IMG_RES-1)]};
 		end
 		else begin
-			if(hpos < H_IMG_RES - WIN_SIZE/2) 
-				shift_in2 = line2[hpos + WIN_SIZE/2];
+			if(hpos < H_IMG_RES - WIN_SIZE/2 - 1) 
+				shift_in2 = line2[hpos + WIN_SIZE/2 + 1];
 			else
-				shift_in2 = line2[hpos - H_IMG_RES + WIN_SIZE/2];
+				shift_in2 = line2[hpos - H_IMG_RES + WIN_SIZE/2 + 1];
 			sh_reg[WIN_SIZE*2+:WIN_SIZE] <= {shift_in2, sh_reg[WIN_SIZE*2+1+:WIN_SIZE-1]};
 		end
 	end
@@ -96,10 +97,10 @@ module eroder1(
 			//lines[H_IMG_RES*i +: H_IMG_RES] <= {in_pix, lines[H_IMG_RES*i +: (H_IMG_RES-1)]};
 		end
 		else begin
-			if(hpos < H_IMG_RES - WIN_SIZE/2) 
-				shift_in3 = line3[hpos + WIN_SIZE/2];
+			if(hpos < H_IMG_RES - WIN_SIZE/2 - 1) 
+				shift_in3 = line3[hpos + WIN_SIZE/2 + 1];
 			else
-				shift_in3 = line3[hpos - H_IMG_RES + WIN_SIZE/2];
+				shift_in3 = line3[hpos - H_IMG_RES + WIN_SIZE/2 + 1];
 			sh_reg[WIN_SIZE*3+:WIN_SIZE] <= {shift_in3, sh_reg[WIN_SIZE*3+1+:WIN_SIZE-1]};
 		end
 	end
@@ -114,10 +115,10 @@ module eroder1(
 			//lines[H_IMG_RES*i +: H_IMG_RES] <= {in_pix, lines[H_IMG_RES*i +: (H_IMG_RES-1)]};
 		end
 		else begin
-			if(hpos < H_IMG_RES - WIN_SIZE/2) 
-				shift_in4 = line4[hpos + WIN_SIZE/2];
+			if(hpos < H_IMG_RES - WIN_SIZE/2 - 1) 
+				shift_in4 = line4[hpos + WIN_SIZE/2 + 1];
 			else
-				shift_in4 = line4[hpos - H_IMG_RES + WIN_SIZE/2];
+				shift_in4 = line4[hpos - H_IMG_RES + WIN_SIZE/2 + 1];
 			sh_reg[WIN_SIZE*4+:WIN_SIZE] <= {shift_in4, sh_reg[WIN_SIZE*4+1+:WIN_SIZE-1]};
 		end
 	end
@@ -132,10 +133,10 @@ module eroder1(
 			//lines[H_IMG_RES*i +: H_IMG_RES] <= {in_pix, lines[H_IMG_RES*i +: (H_IMG_RES-1)]};
 		end
 		else begin
-			if(hpos < H_IMG_RES - WIN_SIZE/2) 
-				shift_in5 = line5[hpos + WIN_SIZE/2];
+			if(hpos < H_IMG_RES - WIN_SIZE/2 - 1) 
+				shift_in5 = line5[hpos + WIN_SIZE/2 + 1];
 			else
-				shift_in5 = line5[hpos - H_IMG_RES + WIN_SIZE/2];
+				shift_in5 = line5[hpos - H_IMG_RES + WIN_SIZE/2 + 1];
 			sh_reg[WIN_SIZE*5+:WIN_SIZE] <= {shift_in5, sh_reg[WIN_SIZE*5+1+:WIN_SIZE-1]};
 		end
 	end

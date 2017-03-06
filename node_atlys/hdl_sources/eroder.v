@@ -40,24 +40,25 @@ module eroder(
 			always @(posedge clk) begin
 				if(line_wr == i) begin
 					block_buff[i].line[hpos] <= in_pix;
-					if(hpos < WIN_SIZE/2 + 2) 
+					if(hpos < WIN_SIZE/2 + 1) 
 						sh_reg[WIN_SIZE*i+:WIN_SIZE] <= {in_pix, sh_reg[WIN_SIZE*i+1 +: WIN_SIZE-1]};
 					//lines[H_IMG_RES*i +: H_IMG_RES] <= {in_pix, lines[H_IMG_RES*i +: (H_IMG_RES-1)]};
 				end
 				else begin
-					if(hpos < H_IMG_RES - WIN_SIZE/2 - 2) 
+					if(hpos < H_IMG_RES - WIN_SIZE/2 - 1) 
 						//block_buff[i].shift_in <= block_buff[i].line[hpos + WIN_SIZE/2 + 2];
-						sh_reg[WIN_SIZE*i+:WIN_SIZE] <= {block_buff[i].line[hpos + WIN_SIZE/2 + 2],
+						sh_reg[WIN_SIZE*i+:WIN_SIZE] <= {block_buff[i].line[hpos + WIN_SIZE/2 + 1],
 																	sh_reg[WIN_SIZE*i+1 +: WIN_SIZE-1]};
 					else
 						//block_buff[i].shift_in <= block_buff[i].line[hpos - H_IMG_RES + WIN_SIZE/2 + 2];
-						sh_reg[WIN_SIZE*i+:WIN_SIZE] <= {block_buff[i].line[hpos - H_IMG_RES + WIN_SIZE/2 + 2],
+						sh_reg[WIN_SIZE*i+:WIN_SIZE] <= {block_buff[i].line[hpos - H_IMG_RES + WIN_SIZE/2 + 1],
 																	sh_reg[WIN_SIZE*i+1 +: WIN_SIZE-1]};
 				end
 			end
 		end
 		
-		(* KEEP = "TRUE" *) reg [WIN_SIZE**2-1:0] rows = 0;
+		(* KEEP = "TRUE" *)
+		reg [WIN_SIZE**2-1:0] rows = 0;
 		for(i=0; i<WIN_SIZE; i=i+1) begin: win
 			reg [ceil_log2(WIN_SIZE)-1:0] lin_sel;
 			//reg [H_IMG_RES-1:0] line;

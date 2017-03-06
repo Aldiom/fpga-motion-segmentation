@@ -41,7 +41,7 @@ module blob_analyzer(
 		.out_pix(eroded_fg_px)
 		//.rows (rows)
 	);
-	/*
+	
 	dilator
 	opening_phase2(
 		.clk(app_clk),
@@ -50,7 +50,7 @@ module blob_analyzer(
 		.in_pix(eroded_fg_px),
 		.out_pix(proc_fg_px)
 	);
-	*/
+	
 	// Segmentation ---------------------
 	reg [3:0] prev_line [0:H_IMG_RES-1];
 	reg [3:0] curr_line [0:H_IMG_RES-1];
@@ -62,7 +62,7 @@ module blob_analyzer(
 	// Read buffer with video clock
 	wire [10:0] vpos_off2 = (vpos_off > 2) ? vpos_off - 3 : vpos_off + V_IMG_RES - 3;
 	
-	wire [18:0] wr_addr = H_IMG_RES*vpos_off + vid_hpos;
+	wire [18:0] wr_addr = H_IMG_RES*vpos_off2 + vid_hpos;
 	wire [18:0] rd_addr = H_IMG_RES*vid_vpos + vid_hpos;
 	wire wr_en = (vid_hpos < H_IMG_RES) && (vpos_off < V_IMG_RES);
 	wire filtered_px;
@@ -71,7 +71,7 @@ module blob_analyzer(
 		.clka(app_clk), // input clka
 		.wea(wr_en), // input [0 : 0] wea
 		.addra(wr_addr), // input [18 : 0] addra
-		.dina(eroded_fg_px), // input [0 : 0] dina
+		.dina(proc_fg_px), // input [0 : 0] dina
 		.clkb(app_clk), // input clkb
 		.addrb(rd_addr), // input [18 : 0] addrb
 		.doutb(filtered_px) // output [0 : 0] doutb

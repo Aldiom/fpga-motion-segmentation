@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Alexis/Documents/Tareas/Project_motion_segmentation/node_atlys/working_dir/erode_test_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="erode_test" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="23" />
+   <wvobject fp_name="/erode_test/out_pix" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">out_pix</obj_property>
+      <obj_property name="ObjectShortName">out_pix</obj_property>
+   </wvobject>
+   <wvobject fp_name="/erode_test/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/erode_test/hpos" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">hpos[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hpos[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/erode_test/vpos" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">vpos[10:0]</obj_property>
+      <obj_property name="ObjectShortName">vpos[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/erode_test/in_pix" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">in_pix</obj_property>
+      <obj_property name="ObjectShortName">in_pix</obj_property>
+   </wvobject>
+   <wvobject fp_name="vbus34" type="vbus" db_ref_id="1">
+      <obj_property name="label">row5</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/erode_test/uut/rows[24]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[24]</obj_property>
+         <obj_property name="ObjectShortName">rows[24]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[23]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[23]</obj_property>
+         <obj_property name="ObjectShortName">rows[23]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[22]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[22]</obj_property>
+         <obj_property name="ObjectShortName">rows[22]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[21]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[21]</obj_property>
+         <obj_property name="ObjectShortName">rows[21]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[20]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[20]</obj_property>
+         <obj_property name="ObjectShortName">rows[20]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus35" type="vbus" db_ref_id="1">
+      <obj_property name="label">row4</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/erode_test/uut/rows[19]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[19]</obj_property>
+         <obj_property name="ObjectShortName">rows[19]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[18]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[18]</obj_property>
+         <obj_property name="ObjectShortName">rows[18]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[17]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[17]</obj_property>
+         <obj_property name="ObjectShortName">rows[17]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[16]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[16]</obj_property>
+         <obj_property name="ObjectShortName">rows[16]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[15]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[15]</obj_property>
+         <obj_property name="ObjectShortName">rows[15]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus36" type="vbus" db_ref_id="1">
+      <obj_property name="label">row3</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/erode_test/uut/rows[14]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[14]</obj_property>
+         <obj_property name="ObjectShortName">rows[14]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[13]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[13]</obj_property>
+         <obj_property name="ObjectShortName">rows[13]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[12]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[12]</obj_property>
+         <obj_property name="ObjectShortName">rows[12]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[11]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[11]</obj_property>
+         <obj_property name="ObjectShortName">rows[11]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[10]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[10]</obj_property>
+         <obj_property name="ObjectShortName">rows[10]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus39" type="vbus" db_ref_id="1">
+      <obj_property name="label">row2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/erode_test/uut/rows[9]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[9]</obj_property>
+         <obj_property name="ObjectShortName">rows[9]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[8]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[8]</obj_property>
+         <obj_property name="ObjectShortName">rows[8]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[7]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[7]</obj_property>
+         <obj_property name="ObjectShortName">rows[7]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[6]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[6]</obj_property>
+         <obj_property name="ObjectShortName">rows[6]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[5]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[5]</obj_property>
+         <obj_property name="ObjectShortName">rows[5]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus40" type="vbus" db_ref_id="1">
+      <obj_property name="label">row1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/erode_test/uut/rows[4]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[4]</obj_property>
+         <obj_property name="ObjectShortName">rows[4]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[3]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[3]</obj_property>
+         <obj_property name="ObjectShortName">rows[3]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[2]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">rows[2]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[1]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">rows[1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/rows[0]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">rows[0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/erode_test/uut/line_wr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">line_wr[2:0]</obj_property>
+      <obj_property name="ObjectShortName">line_wr[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="vbus153" type="vbus" db_ref_id="1">
+      <obj_property name="label">sr0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/erode_test/uut/sh_reg[4]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[4]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[4]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[3]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[3]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[3]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[2]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[2]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[1]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[0]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus147" type="vbus" db_ref_id="1">
+      <obj_property name="label">sr1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/erode_test/uut/sh_reg[9]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[9]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[9]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[8]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[8]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[8]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[7]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[7]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[7]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[6]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[6]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[6]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[5]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[5]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[5]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus141" type="vbus" db_ref_id="1">
+      <obj_property name="label">sr2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/erode_test/uut/sh_reg[14]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[14]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[14]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[13]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[13]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[13]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[12]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[12]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[12]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[11]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[11]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[11]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[10]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[10]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[10]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus135" type="vbus" db_ref_id="1">
+      <obj_property name="label">sr3</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/erode_test/uut/sh_reg[19]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[19]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[19]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[18]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[18]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[18]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[17]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[17]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[17]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[16]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[16]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[16]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[15]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[15]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[15]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus129" type="vbus" db_ref_id="1">
+      <obj_property name="label">sr4</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/erode_test/uut/sh_reg[24]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[24]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[24]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[23]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[23]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[23]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[22]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[22]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[22]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[21]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[21]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[21]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[20]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[20]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[20]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus123" type="vbus" db_ref_id="1">
+      <obj_property name="label">sr5</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/erode_test/uut/sh_reg[29]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[29]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[29]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[28]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[28]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[28]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[27]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[27]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[27]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[26]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[26]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[26]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/erode_test/uut/sh_reg[25]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[25]</obj_property>
+         <obj_property name="ObjectShortName">sh_reg[25]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/erode_test/uut/\block_buff[0].shift_in " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\block_buff[0].shift_in </obj_property>
+      <obj_property name="ObjectShortName">\block_buff[0].shift_in </obj_property>
+   </wvobject>
+   <wvobject fp_name="/erode_test/uut/\block_buff[1].shift_in " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\block_buff[1].shift_in </obj_property>
+      <obj_property name="ObjectShortName">\block_buff[1].shift_in </obj_property>
+   </wvobject>
+   <wvobject fp_name="/erode_test/uut/\block_buff[2].shift_in " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\block_buff[2].shift_in </obj_property>
+      <obj_property name="ObjectShortName">\block_buff[2].shift_in </obj_property>
+   </wvobject>
+   <wvobject fp_name="/erode_test/uut/\block_buff[3].shift_in " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\block_buff[3].shift_in </obj_property>
+      <obj_property name="ObjectShortName">\block_buff[3].shift_in </obj_property>
+   </wvobject>
+   <wvobject fp_name="/erode_test/uut/\block_buff[4].shift_in " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\block_buff[4].shift_in </obj_property>
+      <obj_property name="ObjectShortName">\block_buff[4].shift_in </obj_property>
+   </wvobject>
+   <wvobject fp_name="/erode_test/uut/\block_buff[5].shift_in " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\block_buff[5].shift_in </obj_property>
+      <obj_property name="ObjectShortName">\block_buff[5].shift_in </obj_property>
+   </wvobject>
+</wave_config>

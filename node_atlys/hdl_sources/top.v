@@ -41,7 +41,7 @@ module top (
 	wire        reset, reset_sync, rst_button;
 	wire [10:0] hpos, vpos, hpos_out;
 	wire [23:0] disp_pixel_data1, disp_pixel_data2;
-	wire [23:0] disp_pixel_data = switch[3] ? disp_pixel_data1 : disp_pixel_data2;
+	wire [23:0] disp_pixel_data = switch[3] ? disp_pixel_data2 : disp_pixel_data1;
 
 	assign rst_button = ~rst_button_n;
 

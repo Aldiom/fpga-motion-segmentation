@@ -1,8 +1,0 @@
-F0000F78 //   L0: sync(slave,3960);
-70038000 //       if(StatusTest,SyncTimeout,L0);
-5040083B //       future(2107,L1);
-40000000 //       halt();
-10000100 //   L1: create(1);
-20000007 //       send(0,RT,7);
-70070000 //       if(AlwaysTrue,L0);
-00000000 //       nop();

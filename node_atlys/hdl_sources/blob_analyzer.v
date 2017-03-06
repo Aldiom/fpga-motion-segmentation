@@ -32,7 +32,7 @@ module blob_analyzer(
 	(* KEEP = "TRUE" *) wire proc_fg_px;
 	wire [10:0] vpos_off = (vid_vpos > 2) ? vid_vpos - 3 : vid_vpos + V_IMG_RES - 3;
 	//wire [24:0] rows;
-	eroder
+	eroder1
 	opening_phase1(
 		.clk(app_clk),
 		.hpos(vid_hpos),

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Alexis/Documents/Tareas/Project_motion_segmentation/node_atlys/blob_test_isim_translate.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="blob_test" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/blob_test/app_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">app_clk</obj_property>
+      <obj_property name="ObjectShortName">app_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/vid_hpos" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">vid_hpos[10:0]</obj_property>
+      <obj_property name="ObjectShortName">vid_hpos[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/vid_vpos" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">vid_vpos[10:0]</obj_property>
+      <obj_property name="ObjectShortName">vid_vpos[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/foregnd_px" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">foregnd_px</obj_property>
+      <obj_property name="ObjectShortName">foregnd_px</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/uut/eroded_fg_px" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">eroded_fg_px</obj_property>
+      <obj_property name="ObjectShortName">eroded_fg_px</obj_property>
+   </wvobject>
+   <wvobject fp_name="vbus58" type="vbus" db_ref_id="1">
+      <obj_property name="label">sr5</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_29 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_28 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_27 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_26 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_25 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus64" type="vbus" db_ref_id="1">
+      <obj_property name="label">sr4</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_24 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_23 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_22 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_21 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_20 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus70" type="vbus" db_ref_id="1">
+      <obj_property name="label">sr3</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_19 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_18 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_17 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_16 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_15 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus76" type="vbus" db_ref_id="1">
+      <obj_property name="label">sr2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_14 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_13 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_12 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_11 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_10 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus82" type="vbus" db_ref_id="1">
+      <obj_property name="label">sr1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_9 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_8 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_7 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_6 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_5 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus89" type="vbus" db_ref_id="1">
+      <obj_property name="label">sr0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_4 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_3 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_2 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_1 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/\opening_phase1/sh_reg_0 /O" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">O</obj_property>
+         <obj_property name="ObjectShortName">O</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

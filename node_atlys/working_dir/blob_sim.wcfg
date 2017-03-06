@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Alexis/Documents/Tareas/Project_motion_segmentation/node_atlys/working_dir/erode_test_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="blob_test" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="6" />
+   <wvobject fp_name="/blob_test/app_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">app_clk</obj_property>
+      <obj_property name="ObjectShortName">app_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/vid_hpos" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">vid_hpos[10:0]</obj_property>
+      <obj_property name="ObjectShortName">vid_hpos[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/vid_vpos" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">vid_vpos[10:0]</obj_property>
+      <obj_property name="ObjectShortName">vid_vpos[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/foregnd_px" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">foregnd_px</obj_property>
+      <obj_property name="ObjectShortName">foregnd_px</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/uut/eroded_fg_px" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">eroded_fg_px</obj_property>
+      <obj_property name="ObjectShortName">eroded_fg_px</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/uut/filtered_px" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">filtered_px</obj_property>
+      <obj_property name="ObjectShortName">filtered_px</obj_property>
+   </wvobject>
+</wave_config>

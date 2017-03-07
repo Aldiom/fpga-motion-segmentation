@@ -15,10 +15,10 @@ module eroder(
 	parameter V_IMG_RES = 480;
 	parameter WIN_SIZE = 5; //must be odd
 	parameter [WIN_SIZE**2-1:0] STRUCT_ELM = {5'b01110,
-															5'b11111,
-															5'b11111,
-															5'b11111,
-															5'b01110};
+											  5'b11111,
+											  5'b11111,
+											  5'b11111,
+											  5'b01110};
 
 	// ---------- MODULE ----------
 	reg [ceil_log2(WIN_SIZE)-1:0] line_wr = 0;

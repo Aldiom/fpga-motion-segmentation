@@ -158,6 +158,11 @@ module top (
 		.switch           (switch)
 	);
 	
+	wire border;
+	wire [23:0] blob_an_out;
+	wire [23:0] final_vid = (border) ? 24'hFF4040 : disp_pixel_data1;
+	assign disp_pixel_data2 = (switch[4]) ? blob_an_out : final_vid;
+	
 	blob_analyzer
 	blob_analyzer1 (
 		.app_clk          (clk_25MHz), // Same as vid_clk
@@ -167,8 +172,9 @@ module top (
 		.vid_active_pix   (vid_active_pix),
 		.vid_hpos         (hpos),
 		.vid_vpos         (vpos),
-		.vid_data_out     (disp_pixel_data2),
-		.foregnd_px       (foregnd_px)
+		.vid_data_out     (blob_an_out),
+		.foregnd_px       (foregnd_px),
+		.border           (border)
 	);
 
 	resetsync

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-03-09T18:56:09</DateModified>
+  <DateModified>2017-03-10T06:15:24</DateModified>
   <ModuleName>top</ModuleName>
-  <SummaryTimeStamp>2017-03-06T00:03:00</SummaryTimeStamp>
+  <SummaryTimeStamp>2017-03-10T05:54:07</SummaryTimeStamp>
   <SavedFilePath>C:/Users/Alexis/Documents/Tareas/Project_motion_segmentation/node_atlys/iseconfig/top.xreport</SavedFilePath>
   <ImplementationReportsDirectory>C:/Users/Alexis/Documents/Tareas/Project_motion_segmentation/node_atlys/working_dir\</ImplementationReportsDirectory>
   <DateInitialized>2017-03-06T00:13:12</DateInitialized>
@@ -17,8 +17,20 @@
     <toc-item title="Performance Summary" target="Performance Summary" />
     <toc-item title="Failing Constraints" target="Failing Constraints" />
     <toc-item title="Detailed Reports" target="Detailed Reports" />
+    <table-item tableState="ExpandedTable" tableKey="DeviceUtilizationSummary" />
     <table-item tableState="CollapsedTable" tableKey="DeviceUtilizationSummary" />
-    <table-item tableState="CollapsedTable" tableKey="DeviceUtilizationSummary" />
+    <table-item tableKey="DeviceUtilizationSummary(estimatedvalues)" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary(estimatedvalues)" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary(estimatedvalues)" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary(estimatedvalues)" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary(estimatedvalues)" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary(estimatedvalues)" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary(estimatedvalues)" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary(estimatedvalues)" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary(estimatedvalues)" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary(estimatedvalues)" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary(estimatedvalues)" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary(estimatedvalues)" tableState="CollapsedTable" />
    </view>
    <view inputState="Unknown" program="implementation" contextTags="FPGA_ONLY" hidden="true" type="HTML" file="top_envsettings.html" label="System Settings" />
    <view inputState="Translated" program="map" locator="MAP_IOB_TABLE" contextTags="FPGA_ONLY" type="IOBProperties" file="top_map.xrpt" showConstraints="0" label="IOB Properties" />

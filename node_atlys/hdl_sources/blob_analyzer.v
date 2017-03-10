@@ -11,7 +11,8 @@ module blob_analyzer(
 	input  wire [10:0] vid_hpos,
 	input  wire [10:0] vid_vpos,
 	output reg  [23:0] vid_data_out,
-	input  wire        foregnd_px
+	input  wire        foregnd_px,
+	output wire        border
 	);
 
 	// ---------- PARAMETERS ----------
@@ -59,16 +60,21 @@ module blob_analyzer(
 	reg [B_BITS-1:0] prev_pix = 0;
 	reg [B_BITS-1:0] blob_count = 0;
 	reg curr_line = 0;
+	reg saving_boxes = 0;
+	reg [B_BITS-1:0] box_count = 0;
+	reg [2:0] line_state = 0;
+	reg seg_en = 1;
 	
-	wire [MAX_OBJ_NUM-1:0] match_mask;
+	wire [MAX_OBJS-1:0] match_mask;
 	reg  [B_BITS-1:0] match_tag_hi;
 	reg  [B_BITS-1:0] match_tag_lo;
 	
-	reg [MAX_OBJ_NUM-1:0] valid_mask = 0;
+	reg [MAX_OBJS-1:0] valid_mask = 0;
 	reg [10:0] top [0:MAX_OBJ_NUM-1], top2 [0:MAX_OBJ_NUM-1];
 	reg [10:0] bottom [0:MAX_OBJ_NUM-1], bottom2 [0:MAX_OBJ_NUM-1];
 	reg [10:0] left [0:MAX_OBJ_NUM-1], left2 [0:MAX_OBJ_NUM-1];
 	reg [10:0] right [0:MAX_OBJ_NUM-1], right2 [0:MAX_OBJ_NUM-1];
+	reg [MAX_OBJS*44-1:0] boxes = 0;
 	
 	generate
 		genvar i;
@@ -96,7 +102,8 @@ module blob_analyzer(
 	always @(posedge app_clk) begin
 		
 		// the actual segmentation of blobs
-		if(proc_fg_px) begin
+		
+		if(proc_fg_px && seg_en) begin
 			if(~|match_mask) begin //then it's a new blob
 				blob_count <= (blob_count < MAX_OBJS) ? blob_count + 1 : MAX_OBJS;
 				prev_pix <= (blob_count < MAX_OBJS) ? blob_count + 1 : 0;
@@ -170,7 +177,7 @@ module blob_analyzer(
 					line_0[vid_hpos] <= (vpos_off2 < V_IMG_RES-1) ? match_tag_lo : 0;
 			end
 		end
-		else begin
+		else if(seg_en) begin
 			prev_pix <= 0;
 			if(curr_line)
 				line_1[vid_hpos] <= 0;
@@ -179,36 +186,91 @@ module blob_analyzer(
 		end
 		
 		// Signal logic to make the previous block work
-		if(vid_hpos == H_IMG_RES-1) begin //end of line... you have like 150 cycles until next 
+		if(vid_hpos == H_IMG_RES - 1) begin //end of line... you have like 150 cycles until next 
 			curr_line <= ~curr_line;
 			if(vpos_off2 == V_IMG_RES-1) begin //end of frame
-				valid_mask <= 0;
-				blob_count <= 0;
-				//and do something to save values
+				saving_boxes <= 1;
+				box_count <= 0;
 			end
 		end
-		
-		// update the prev_line shift register 
-		if(vid_hpos + 11'd2 <= H_IMG_RES - 1) begin
-			if(curr_line)
-				prev_line <= {prev_line[0+:2*B_BITS], line_0[vid_hpos+11'd2]};
-			else
-				prev_line <= {prev_line[0+:2*B_BITS], line_1[vid_hpos+11'd2]};
+	
+		if(line_state == 3'd0) begin //normal shifting
+			seg_en <= 1'b1;
+			if(vid_hpos + 11'd2 <= H_IMG_RES - 1) begin
+				if(curr_line)
+					prev_line <= {prev_line[0+:2*B_BITS], line_0[vid_hpos+11'd2]};
+				else
+					prev_line <= {prev_line[0+:2*B_BITS], line_1[vid_hpos+11'd2]};
+			end
+			else begin
+				prev_line <= {prev_line[0+:2*B_BITS], {B_BITS{1'b0}}};
+				line_state <= 3'd1;
+			end
 		end
-		else
-			prev_line <= {prev_line[0+:2*B_BITS], {B_BITS{1'b0}}};
+		else if(line_state == 3'd1) begin //preparing shift register for new line
+			if(curr_line)
+				prev_line <= {prev_line[0+:2*B_BITS], line_0[0]};
+			else
+				prev_line <= {prev_line[0+:2*B_BITS], line_1[0]};
+			seg_en <= 1'b0;
+			line_state <= 3'd2;
+		end
+		else if(line_state == 3'd2) begin //shifting data for pixel 0 (1)
+			if(curr_line)
+				prev_line <= {prev_line[0+:2*B_BITS], line_0[1]};
+			else
+				prev_line <= {prev_line[0+:2*B_BITS], line_1[1]};
+			seg_en <= 1'b1;
+			line_state <= 3'd3;
+		end	
+		else if(line_state == 3'd3)  begin //shifting data for pixel 1 (2)
+			if(curr_line)
+				prev_line <= {prev_line[0+:2*B_BITS], line_0[2]};
+			else
+				prev_line <= {prev_line[0+:2*B_BITS], line_1[2]};
+			seg_en <= 1'b1;
+			line_state <= 3'd4;
+		end
+		else if(line_state == 3'd4) begin //prepare for pixel 2 (3) but deactivate processing
+			if(curr_line)
+				prev_line <= {prev_line[0+:2*B_BITS], line_0[3]};
+			else
+				prev_line <= {prev_line[0+:2*B_BITS], line_1[3]};
+			seg_en <= 1'b0;
+			line_state <= 3'd5;			
+		end
+		else if(vid_hpos == 11'b1) begin //wait for line start
+			line_state <= 3'b0;
+			seg_en <= 1'b1;
+		end
+		
+		// box data saving
+		if(saving_boxes) begin
+			if(blob_count > 0) begin
+				if(valid_mask[box_count]) begin
+					boxes[box_count*44+:44] <= {top[box_count], bottom[box_count], 
+												left[box_count], right[box_count]};
+					blob_count <= blob_count - 1;
+				end
+				box_count <= box_count + 1;
+			end
+			else begin
+				saving_boxes <= 0;
+			end
+		end
 	end
 	
-	//add state machine to write this... or think something better
-	dualport_RAM box_mem (
-		.clka(mem_clk), // input clka
-		.wea(wr_en), // input [0 : 0] wea
-		.addra(wr_addr), // input [18 : 0] addra
-		.dina(proc_fg_px), // input [0 : 0] dina
-		.clkb(app_clk), // input clkb
-		.addrb(rd_addr), // input [18 : 0] addrb
-		.doutb(filtered_px) // output [0 : 0] doutb
-	);
+	wire [MAX_OBJS-1:0] borders;
+	generate
+		for(i=0; i<MAX_OBJS; i=i+1) begin
+			assign borders[i] = (((vid_vpos==boxes[44*i+:11]) || (vid_vpos==boxes[44*i+11+:11])) && 
+								((vid_hpos>=boxes[44*i+22+:11]) && (vid_hpos<=boxes[44*i+33+:11]))) ||
+								(((vid_vpos>=boxes[44*i+:11]) && (vid_vpos<=boxes[44*i+11+:11])) && 
+								((vid_hpos==boxes[44*i+22+:11]) || (vid_hpos==boxes[44*i+33+:11])));
+		end
+	endgenerate
+	
+	assign border = |borders;
 
 	// Read buffer with video clock
 	wire [18:0] wr_addr = vid_hpos + H_IMG_RES*vpos_off2;
@@ -224,10 +286,10 @@ module blob_analyzer(
 		.clkb(app_clk), // input clkb
 		.addrb(rd_addr), // input [18 : 0] addrb
 		.doutb(filtered_px) // output [0 : 0] doutb
-	); //...Dragonborn
+	);
 	
 	reg [23:0] pre_buff;
-	//FUS RO DAH!!
+
 	always @( posedge app_clk ) begin
 		// Display data
 		/*
@@ -235,7 +297,7 @@ module blob_analyzer(
 		Data_OUT_GREEN <= (vid_hpos < H_IMG_RES) ? (line_buffer_g[vid_hpos]) : (8'd0);
 		Data_OUT_BLUE <= (vid_hpos < H_IMG_RES) ? (line_buffer_b[vid_hpos]) : (8'd0);	
 		*/
-		pre_buff      <= {24{filtered_px}} ;//{ Data_OUT_RED, Data_OUT_GREEN, Data_OUT_BLUE };
+		pre_buff      <= {24{filtered_px}};//{ Data_OUT_RED, Data_OUT_GREEN, Data_OUT_BLUE };
 		vid_data_out  <= pre_buff;
 	end
 

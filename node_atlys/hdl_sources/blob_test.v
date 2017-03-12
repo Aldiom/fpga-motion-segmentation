@@ -74,7 +74,7 @@ module blob_test;
 	end
 	
 	always @(*) begin
-		if((vid_hpos>11'd20 && vid_hpos<11'd201) || (vid_hpos>11'd630 && vid_hpos<11'd635)) begin
+		if((vid_hpos>11'd20 && vid_hpos<11'd201) || (vid_hpos>11'd600 && vid_hpos<11'd635)) begin
 			if(vid_vpos>11'd5 && vid_vpos<11'd100)
 				foregnd_px = 1'b1;
 			else

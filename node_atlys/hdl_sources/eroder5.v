@@ -7,7 +7,7 @@ module eroder5(
 	input  wire        in_pix,
 	output wire        out_pix
 	);
-
+	
 	`include "verilog_utils.vh"
 	
 	// ---------- PARAMETERS ----------

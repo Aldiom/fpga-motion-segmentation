@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="7" />
+   <WVObjectSize size="13" />
    <wvobject fp_name="/blob_test/app_clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">app_clk</obj_property>
       <obj_property name="ObjectShortName">app_clk</obj_property>
@@ -29,16 +29,45 @@
       <obj_property name="ElementShortName">foregnd_px</obj_property>
       <obj_property name="ObjectShortName">foregnd_px</obj_property>
    </wvobject>
-   <wvobject fp_name="/blob_test/uut/eroded_fg_px" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">eroded_fg_px</obj_property>
-      <obj_property name="ObjectShortName">eroded_fg_px</obj_property>
-   </wvobject>
-   <wvobject fp_name="/blob_test/uut/proc_fg_px" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">proc_fg_px</obj_property>
-      <obj_property name="ObjectShortName">proc_fg_px</obj_property>
-   </wvobject>
    <wvobject fp_name="/blob_test/uut/filtered_px" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">filtered_px</obj_property>
       <obj_property name="ObjectShortName">filtered_px</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/uut/top" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">top[0:14,10:0]</obj_property>
+      <obj_property name="ObjectShortName">top[0:14,10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/uut/bottom" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">bottom[0:14,10:0]</obj_property>
+      <obj_property name="ObjectShortName">bottom[0:14,10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/uut/left" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">left[0:14,10:0]</obj_property>
+      <obj_property name="ObjectShortName">left[0:14,10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/uut/right" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">right[0:14,10:0]</obj_property>
+      <obj_property name="ObjectShortName">right[0:14,10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/uut/blob_count" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">blob_count[3:0]</obj_property>
+      <obj_property name="ObjectShortName">blob_count[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/uut/valid_mask" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">valid_mask[14:0]</obj_property>
+      <obj_property name="ObjectShortName">valid_mask[14:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/uut/border" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">border</obj_property>
+      <obj_property name="ObjectShortName">border</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/uut/borders" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">borders[14:0]</obj_property>
+      <obj_property name="ObjectShortName">borders[14:0]</obj_property>
    </wvobject>
 </wave_config>

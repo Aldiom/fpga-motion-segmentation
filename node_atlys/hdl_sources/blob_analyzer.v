@@ -14,19 +14,23 @@ module blob_analyzer(
 	input  wire        foregnd_px,
 	output wire        border
 	);
-
+	
 	// ---------- PARAMETERS ----------
 	//none
 	
 	// ---------- LOCAL PARAMETERS ----------
 	localparam [10:0] H_IMG_RES = 640;
 	localparam [10:0] V_IMG_RES = 480;
+	localparam H_BITS = ceil_log2(H_IMG_RES-1);
+	localparam V_BITS = ceil_log2(V_IMG_RES-1);
+	localparam BOX_BS = 2*(H_BITS + V_BITS);
 	localparam WIN_SIZE  = 5;
 	localparam MAX_OBJ_NUM = 15;
 	localparam B_BITS = ceil_log2(MAX_OBJ_NUM);
 	localparam [B_BITS-1:0] MAX_OBJS = MAX_OBJ_NUM;
 	
 	// ---------- MODULE ----------
+	
 	`include "verilog_utils.vh"
 	
 	// Morphological processing ---------------------
@@ -74,7 +78,7 @@ module blob_analyzer(
 	reg [10:0] bottom [0:MAX_OBJ_NUM-1], bottom2 [0:MAX_OBJ_NUM-1];
 	reg [10:0] left [0:MAX_OBJ_NUM-1], left2 [0:MAX_OBJ_NUM-1];
 	reg [10:0] right [0:MAX_OBJ_NUM-1], right2 [0:MAX_OBJ_NUM-1];
-	reg [MAX_OBJS*44-1:0] boxes = 0;
+	reg [MAX_OBJS*2*(H_BITS+V_BITS)-1:0] boxes = 0;
 	
 	generate
 		genvar i;
@@ -102,7 +106,6 @@ module blob_analyzer(
 	always @(posedge app_clk) begin
 		
 		// the actual segmentation of blobs
-		
 		if(proc_fg_px && seg_en) begin
 			if(~|match_mask) begin //then it's a new blob
 				blob_count <= (blob_count < MAX_OBJS) ? blob_count + 1 : MAX_OBJS;
@@ -248,8 +251,10 @@ module blob_analyzer(
 		if(saving_boxes) begin
 			if(blob_count > 0) begin
 				if(valid_mask[box_count]) begin
-					boxes[box_count*44+:44] <= {top[box_count], bottom[box_count], 
-												left[box_count], right[box_count]};
+					boxes[box_count*BOX_BS+:BOX_BS] <= {top[box_count][V_BITS-1:0],
+														bottom[box_count][V_BITS-1:0], 
+														left[box_count][H_BITS-1:0], 
+														right[box_count][H_BITS-1:0]};
 					blob_count <= blob_count - 1;
 				end
 				box_count <= box_count + 1;
@@ -260,16 +265,21 @@ module blob_analyzer(
 		end
 	end
 	
-	wire [MAX_OBJS-1:0] borders;
-	generate
-		for(i=0; i<MAX_OBJS; i=i+1) begin
-			assign borders[i] = (((vid_vpos==boxes[44*i+:11]) || (vid_vpos==boxes[44*i+11+:11])) && 
-								((vid_hpos>=boxes[44*i+22+:11]) && (vid_hpos<=boxes[44*i+33+:11]))) ||
-								(((vid_vpos>=boxes[44*i+:11]) && (vid_vpos<=boxes[44*i+11+:11])) && 
-								((vid_hpos==boxes[44*i+22+:11]) || (vid_hpos==boxes[44*i+33+:11])));
+	reg [MAX_OBJS-1:0] borders;
+		
+	always @(posedge app_clk) begin
+		for(n=0; n<MAX_OBJS; n=n+1) begin
+			borders[n] <= (((vid_vpos[V_BITS-1:0] == boxes[BOX_BS*(n+1)-V_BITS +: V_BITS]) || 
+							(vid_vpos[V_BITS-1:0] == boxes[BOX_BS*n+2*H_BITS +: V_BITS])) && 
+						   ((vid_hpos[H_BITS-1:0] >= boxes[BOX_BS*n+H_BITS +: H_BITS]) && 
+							(vid_hpos[H_BITS-1:0] <= boxes[BOX_BS*n +: H_BITS]))) ||
+						  (((vid_vpos[V_BITS-1:0] >= boxes[BOX_BS*(n+1)-V_BITS +: V_BITS]) && 
+							(vid_vpos[V_BITS-1:0] <= boxes[BOX_BS*n+2*H_BITS +: V_BITS])) && 
+						   ((vid_hpos[H_BITS-1:0] == boxes[BOX_BS*n+H_BITS +: H_BITS]) || 
+							(vid_hpos[H_BITS-1:0] == boxes[BOX_BS*n +: H_BITS])));
 		end
-	endgenerate
-	
+	end
+
 	assign border = |borders;
 
 	// Read buffer with video clock

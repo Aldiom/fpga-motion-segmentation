@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="17" />
    <wvobject fp_name="/blob_test/app_clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">app_clk</obj_property>
       <obj_property name="ObjectShortName">app_clk</obj_property>
@@ -28,6 +28,10 @@
    <wvobject fp_name="/blob_test/foregnd_px" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">foregnd_px</obj_property>
       <obj_property name="ObjectShortName">foregnd_px</obj_property>
+   </wvobject>
+   <wvobject fp_name="/blob_test/uut/proc_fg_px" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">proc_fg_px</obj_property>
+      <obj_property name="ObjectShortName">proc_fg_px</obj_property>
    </wvobject>
    <wvobject fp_name="/blob_test/uut/filtered_px" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">filtered_px</obj_property>
@@ -52,6 +56,69 @@
       <obj_property name="ElementShortName">right[0:14,10:0]</obj_property>
       <obj_property name="ObjectShortName">right[0:14,10:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="vbus38" type="vbus" db_ref_id="1">
+      <obj_property name="label">prev_line[11:8]</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <wvobject fp_name="/blob_test/uut/prev_line[11]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[11]</obj_property>
+         <obj_property name="ObjectShortName">prev_line[11]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/prev_line[10]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[10]</obj_property>
+         <obj_property name="ObjectShortName">prev_line[10]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/prev_line[9]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[9]</obj_property>
+         <obj_property name="ObjectShortName">prev_line[9]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/prev_line[8]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[8]</obj_property>
+         <obj_property name="ObjectShortName">prev_line[8]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus43" type="vbus" db_ref_id="1">
+      <obj_property name="label">prev_line[7:4]</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <wvobject fp_name="/blob_test/uut/prev_line[7]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[7]</obj_property>
+         <obj_property name="ObjectShortName">prev_line[7]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/prev_line[6]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[6]</obj_property>
+         <obj_property name="ObjectShortName">prev_line[6]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/prev_line[5]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[5]</obj_property>
+         <obj_property name="ObjectShortName">prev_line[5]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/prev_line[4]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[4]</obj_property>
+         <obj_property name="ObjectShortName">prev_line[4]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus48" type="vbus" db_ref_id="1">
+      <obj_property name="label">prev_line[3:0]</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <wvobject fp_name="/blob_test/uut/prev_line[3]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[3]</obj_property>
+         <obj_property name="ObjectShortName">prev_line[3]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/prev_line[2]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">prev_line[2]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/prev_line[1]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">prev_line[1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/blob_test/uut/prev_line[0]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">prev_line[0]</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="/blob_test/uut/blob_count" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">blob_count[3:0]</obj_property>

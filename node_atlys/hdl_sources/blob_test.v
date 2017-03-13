@@ -35,8 +35,8 @@ module blob_test;
 	reg foregnd_px;
 
 	integer i;
+	
 	// Outputs
-	wire [23:0] vid_data_out;
 
 	// Instantiate the Unit Under Test (UUT)
 	blob_analyzer uut (
@@ -62,7 +62,7 @@ module blob_test;
 		vid_vpos = 0;
 		foregnd_px = 0;
 		i = 0;
-
+		
 		// Wait 100 ns for global reset to finish
 		#100;
         
@@ -73,13 +73,15 @@ module blob_test;
 		#1 app_clk = ~app_clk;
 	end
 	
-	always @(*) begin
-		if((vid_hpos>11'd20 && vid_hpos<11'd201) || (vid_hpos>11'd600 && vid_hpos<11'd635)) begin
-			if(vid_vpos>11'd5 && vid_vpos<11'd100)
+	always @(*) begin 
+		if(vid_vpos>11'd5 && vid_vpos<11'd100) begin
+			if((vid_hpos>11'd20 && vid_hpos<11'd201) || (vid_hpos>11'd250 && vid_hpos<11'd330))
 				foregnd_px = 1'b1;
 			else
 				foregnd_px = 1'b0;
 		end
+		else if((vid_vpos>11'd99 && vid_vpos<11'd110) && (vid_hpos>11'd195 && vid_hpos<11'd260))
+			foregnd_px = 1'b1;
 		else
 			foregnd_px = 1'b0;
 	end

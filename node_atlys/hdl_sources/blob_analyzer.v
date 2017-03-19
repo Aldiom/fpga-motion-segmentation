@@ -76,10 +76,10 @@ module blob_analyzer(
 	
 	reg [MAX_OBJS-1:0] valid_mask = 0;
 	reg [MAX_OBJS-1:0] curr_mask = 0;
-	reg [10:0] top [0:MAX_OBJ_NUM-1], top2 [0:MAX_OBJ_NUM-1];
-	reg [10:0] bottom [0:MAX_OBJ_NUM-1], bottom2 [0:MAX_OBJ_NUM-1];
-	reg [10:0] left [0:MAX_OBJ_NUM-1], left2 [0:MAX_OBJ_NUM-1];
-	reg [10:0] right [0:MAX_OBJ_NUM-1], right2 [0:MAX_OBJ_NUM-1];
+	reg [10:0] top [0:MAX_OBJ_NUM-1];//, top2 [0:MAX_OBJ_NUM-1];
+	reg [10:0] bottom [0:MAX_OBJ_NUM-1];//, bottom2 [0:MAX_OBJ_NUM-1];
+	reg [10:0] left [0:MAX_OBJ_NUM-1];//, left2 [0:MAX_OBJ_NUM-1];
+	reg [10:0] right [0:MAX_OBJ_NUM-1];//, right2 [0:MAX_OBJ_NUM-1];
 	reg [MAX_OBJS*2*(H_BITS+V_BITS)-1:0] boxes = 0;
 	
 	generate
@@ -115,10 +115,10 @@ module blob_analyzer(
 				prev_pix <= (blob_count < MAX_OBJS) ? blob_count + 1 : 0;
 				if(blob_count < MAX_OBJS) begin
 				// note the arrays are duplicated, this is to make simultaneous reads in diff addresses
-					{top[blob_count], top2[blob_count]} <= {2{vpos_off2}}; 
-					{bottom[blob_count], bottom2[blob_count]} <= {2{vpos_off2}};
-					{left[blob_count], left2[blob_count]} <= {2{vid_hpos}};
-					{right[blob_count], right2[blob_count]} <= {2{vid_hpos}};
+					top[blob_count] <= vpos_off2; 
+					bottom[blob_count] <= vpos_off2;
+					left[blob_count] <= vid_hpos;
+					right[blob_count] <= vid_hpos;
 					valid_mask[blob_count] <= 1'b1;
 				end
 				if(blob_count < MAX_OBJS) begin
@@ -138,11 +138,11 @@ module blob_analyzer(
 				prev_pix <= match_tag_lo;
 				//and do stuff to get borders
 				if(bottom[match_tag_lo-1] < vpos_off2)
-					{bottom[match_tag_lo-1], bottom2[match_tag_lo-1]} <= {2{vpos_off2}};
+					bottom[match_tag_lo-1] <= vpos_off2;
 				if(left[match_tag_lo-1] > vid_hpos)
-					{left[match_tag_lo-1], left2[match_tag_lo-1]} <= {2{vid_hpos}};
+					left[match_tag_lo-1] <= vid_hpos;
 				if(right[match_tag_lo-1] < vid_hpos)
-					{right[match_tag_lo-1], right2[match_tag_lo-1]} <= {2{vid_hpos}};
+					right[match_tag_lo-1] <= vid_hpos;
 				//and write line buffer
 				if(curr_line) 
 					line_1[vid_hpos] <= (vpos_off2 < V_IMG_RES-1) ? match_tag_lo : 0;
@@ -152,28 +152,28 @@ module blob_analyzer(
 			else begin //then we have a blob collision
 				prev_pix <= match_tag_lo;
 				//and do stuff
-				if(top[match_tag_lo-1] > top2[match_tag_hi-1])
-					{top[match_tag_lo-1], top2[match_tag_lo-1]} <= {2{top2[match_tag_hi-1]}};
-				if((bottom[match_tag_lo-1] < vpos_off2) || (bottom[match_tag_lo-1] < bottom2[match_tag_hi-1]))
+				if(top[match_tag_lo-1] > top[match_tag_hi-1])
+					top[match_tag_lo-1] <= top[match_tag_hi-1];
+				if((bottom[match_tag_lo-1] < vpos_off2) || (bottom[match_tag_lo-1] < bottom[match_tag_hi-1]))
 				begin
 					if(vpos_off2 < bottom[match_tag_hi-1])
-						{bottom[match_tag_lo-1], bottom2[match_tag_lo-1]} <= {2{vpos_off2}};
+						bottom[match_tag_lo-1] <= vpos_off2;
 					else
-						{bottom[match_tag_lo-1], bottom2[match_tag_lo-1]} <= {2{bottom2[match_tag_hi-1]}};
+						bottom[match_tag_lo-1] <= bottom[match_tag_hi-1];
 				end
 				if((left[match_tag_lo-1] > vid_hpos) || (left[match_tag_lo-1] > left[match_tag_hi-1]))
 				begin
 					if(vid_hpos > left[match_tag_hi-1])
-						{left[match_tag_lo-1], left2[match_tag_lo-1]} <= {2{vid_hpos}};
+						left[match_tag_lo-1] <= vid_hpos;
 					else
-						{left[match_tag_lo-1], left2[match_tag_lo-1]} <= {2{left2[match_tag_hi-1]}};
+						left[match_tag_lo-1] <= left[match_tag_hi-1];
 				end
 				if((right[match_tag_lo-1] < vid_hpos) || (right[match_tag_lo-1] < right[match_tag_hi-1]))
 				begin
 					if(vid_hpos < right[match_tag_hi-1])
-						{right[match_tag_lo-1], right2[match_tag_lo-1]} <= {2{vid_hpos}};
+						right[match_tag_lo-1] <= vid_hpos;
 					else
-						{right[match_tag_lo-1], right2[match_tag_lo-1]} <= {2{right2[match_tag_hi-1]}};
+						right[match_tag_lo-1] <= right[match_tag_hi-1];
 				end
 				valid_mask[match_tag_hi-1] <= 1'b0;
 				//and write line buffer
@@ -197,7 +197,8 @@ module blob_analyzer(
 			curr_line <= ~curr_line;
 			if(vpos_off2 == V_IMG_RES-1) begin //end of frame
 				saving_boxes <= 1;
-				box_count <= 0;
+				box_count <= (blob_count > 0) ? blob_count - 1 : 0;
+				blob_count <= 0;
 			end
 		end
 		
@@ -255,16 +256,14 @@ module blob_analyzer(
 		
 		// box data saving
 		if(saving_boxes) begin
-			if(blob_count > 0) begin
-				if(valid_mask[box_count]) begin
-					boxes[box_count*BOX_BS+:BOX_BS] <= {top[box_count][V_BITS-1:0],
-														bottom[box_count][V_BITS-1:0], 
-														left[box_count][H_BITS-1:0], 
-														right[box_count][H_BITS-1:0]};
-					blob_count <= blob_count - 1;
-				end
-				box_count <= box_count + 1;
+			if(valid_mask[box_count]) begin
+				boxes[box_count*BOX_BS+:BOX_BS] <= {top[box_count][V_BITS-1:0],
+													bottom[box_count][V_BITS-1:0], 
+													left[box_count][H_BITS-1:0], 
+													right[box_count][H_BITS-1:0]};
 			end
+			if(box_count > 0)
+				box_count <= box_count - 1;
 			else begin
 				curr_mask <= valid_mask;
 				valid_mask <= 0;

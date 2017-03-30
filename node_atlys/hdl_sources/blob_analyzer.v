@@ -114,7 +114,7 @@ module blob_analyzer(
 				blob_count <= (blob_count < MAX_OBJS) ? blob_count + 1 : MAX_OBJS;
 				prev_pix <= (blob_count < MAX_OBJS) ? blob_count + 1 : 0;
 				if(blob_count < MAX_OBJS) begin
-				// note the arrays are duplicated, this is to make simultaneous reads in diff addresses
+				//note the arrays are (were) duplicated, this is to make simultaneous reads in diff addresses
 					top[blob_count] <= vpos_off2; 
 					bottom[blob_count] <= vpos_off2;
 					left[blob_count] <= vid_hpos;
@@ -272,6 +272,8 @@ module blob_analyzer(
 		end
 	end
 	
+	// Logic for border drawing in screen
+	
 	reg [MAX_OBJS-1:0] borders;
 		
 	always @(posedge app_clk) begin
@@ -295,6 +297,7 @@ module blob_analyzer(
 	wire wr_en = (vid_hpos < H_IMG_RES) && (vpos_off < V_IMG_RES);
 	wire filtered_px;
 	
+	// Buffer for showing processed fg mask
 	dualport_RAM frame_mem (
 		.clka(app_clk), // input clka
 		.wea(wr_en), // input [0 : 0] wea
@@ -309,11 +312,6 @@ module blob_analyzer(
 
 	always @( posedge app_clk ) begin
 		// Display data
-		/*
-		Data_OUT_RED <= (vid_hpos < H_IMG_RES) ? (line_buffer_r[vid_hpos]) : (8'd0);
-		Data_OUT_GREEN <= (vid_hpos < H_IMG_RES) ? (line_buffer_g[vid_hpos]) : (8'd0);
-		Data_OUT_BLUE <= (vid_hpos < H_IMG_RES) ? (line_buffer_b[vid_hpos]) : (8'd0);	
-		*/
 		pre_buff      <= {24{filtered_px}};//{ Data_OUT_RED, Data_OUT_GREEN, Data_OUT_BLUE };
 		vid_data_out  <= pre_buff;
 	end

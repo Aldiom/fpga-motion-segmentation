@@ -208,16 +208,11 @@ module background_substractor (
 	reg [7:0] diff_buffer_r [0:H_IMG_RES-1];
 	reg [7:0] diff_buffer_g [0:H_IMG_RES-1];
 	reg [7:0] diff_buffer_b [0:H_IMG_RES-1];
-	// Update line_buffer
-	//reg [7:0] updt_buffer_r [0:H_IMG_RES-1];
-	//reg [7:0] updt_buffer_g [0:H_IMG_RES-1];
-	//reg [7:0] updt_buffer_b [0:H_IMG_RES-1];
 	
 	reg [7:0] Data_OUT_1_RED_8;
 	reg [7:0] Data_OUT_1_GREEN_8;
 	reg [7:0] Data_OUT_1_BLUE_8;
-	//reg [23:0] op_block_buffer [0:4][0:H_IMG_RES-1];
-	//reg [23:0] op_line_buffer [0:H_IMG_RES-1];
+
 	wire [9:0] wr_buff_add;
 	wire       wr_en;
 	wire [9:0] bg_wr_buff_add;
@@ -234,8 +229,6 @@ module background_substractor (
 	wire [7:0]  bg_G   = bg_buff_data_in[15:8];
 	wire [7:0]  bg_B   = bg_buff_data_in[7:0];	
 	
-	//wire [9:0] r_px = (wr_buff_add == H_IMG_RES-1) ? -10'b1 : 10'b1;//this was for filter
-	//wire [9:0] l_px = (wr_buff_add == 0) ? -10'b1 : 10'b1;
 	// Write buffer from external RAM and RAM clock
 	reg [15:0] diff_pipe_r;
 	reg [15:0] diff_pipe_g;
@@ -364,17 +357,8 @@ module background_substractor (
 		.port_rd_data_in    ( c3_p2_rd_data ),        
 		.port_rd_empty      ( c3_p2_rd_empty )    
 	);
-	/*	
-	wire [7:0] bg_rd_r = bg_buffer_r[bg_rd_buff_add];
-	wire [7:0] bg_rd_g = bg_buffer_g[bg_rd_buff_add];
-	wire [7:0] bg_rd_b = bg_buffer_b[bg_rd_buff_add];
-	wire [7:0] ln_rd_r = line_buffer_r[bg_rd_buff_add];
-	wire [7:0] ln_rd_g = line_buffer_g[bg_rd_buff_add];
-	wire [7:0] ln_rd_b = line_buffer_b[bg_rd_buff_add];
-	wire [9:0] sum_r = bg_rd_r + bg_rd_r + bg_rd_r + ln_rd_r;
-	wire [9:0] sum_g = bg_rd_g + bg_rd_g + bg_rd_g + ln_rd_g;
-	wire [9:0] sum_b = bg_rd_b + bg_rd_b + bg_rd_b + ln_rd_b;
-	*/
+	
+	// Calculate weighted average for background update
 	wire [7:0] bg_update_r = (15 * bg_buffer_r[bg_rd_buff_add] + line_buffer_r[bg_rd_buff_add]) >> 4;
 	wire [7:0] bg_update_g = (15 * bg_buffer_g[bg_rd_buff_add] + line_buffer_g[bg_rd_buff_add]) >> 4;
 	wire [7:0] bg_update_b = (15 * bg_buffer_b[bg_rd_buff_add] + line_buffer_b[bg_rd_buff_add]) >> 4;
@@ -412,25 +396,13 @@ module background_substractor (
 	localparam INPUT_V_RES_PIX = 480;
 	localparam [12:0] INPUT_H_RES_PIX_FIX = INPUT_H_RES_PIX*4;
 	localparam [29:0] BG_MEM_OFFSET = INPUT_H_RES_PIX*INPUT_V_RES_PIX*4 + 30'd256;
-	/*
-	genvar i, j; //trying some stuff
-	generate
-		for( i = 0; i < 5; i = i+1 ) begin
-			for( j = 0; j < H_IMG_RES; j = j+1 ) begin
-				if( i == 0 )
-					op_block_buffer[i][j] <= op_line_buffer[j];
-				else
-					op_block_buffer[i][j] <= op_block_buffer[i-1][j];
-			end
-		end
-	endgenerate
-	*/
+
 	
 	reg        updating_bg     = 0;
 	reg  [5:0] delay_counter   = 0;
 	reg  [9:0] update_bg_count = 0;
 	wire       active_line     = (vid_preload_line) & (vid_vpos < V_IMG_RES);
-	wire [9:0] refresh_rate    = (switch[2]) ? 10'd9 : 10'd599;
+	wire [9:0] refresh_rate    = (switch[2]) ? 10'd9 : 10'd599; // Adjustable refresh rate
 
 	always @( posedge app_clk ) begin
 	

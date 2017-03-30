@@ -36,7 +36,15 @@ module top (
 	output wire [7:0]  led,
 	input  wire [7:0]  switch
 	);
-
+	
+	/* Usage: 
+	sw(0) show HDMI-in/Foreground mask
+	sw(1) show Backgroun on/off
+	sw(2) Fast/Slow bg refresh rate
+	sw(3) Bounding boxes on/off
+	sw(4) show fg mask after morph processing on/off
+	*/
+	
 	// ---------- MODULE ----------
 	wire        reset, reset_sync, rst_button;
 	wire [10:0] hpos, vpos, hpos_out;
